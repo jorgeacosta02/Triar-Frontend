@@ -1,0 +1,60 @@
+@use'../../styles/globals' as g;
+
+.container{
+    box-sizing: border-box;
+    background-color: g.$light-black-color;
+    color: g.$white-color;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0 5% 5vh;
+    @include g.create-flexbox(column, space-around);
+    form{
+        box-sizing: border-box;
+        width: 100%;
+        @include g.create-flexbox(column, space-between);
+        align-items: center;
+        gap: 2vh;
+        .inputBlock{
+            width: 100%;
+            @include g.create-flexbox(column, center);
+            align-items: flex-start;
+            label{
+                font-size: g.$mobile-p-font-size;
+            }
+            input{
+                box-sizing: border-box;
+                width: 100%;
+                font-size: g.$mobile-p-font-size;
+            }
+            span{
+                font-size: calc(g.$mobile-p-font-size * .9);
+                color: g.$red-color;
+            }
+        }
+        .submit{
+            cursor: pointer;
+            border:none;
+            color: g.$dark-black-color;
+            background-color: g.$es-color;
+            border-radius: 4px;
+            width: 70%;
+            height: 36px;
+            font-weight: 300;
+            font-size: calc(g.$mobile-h2-font-size * .85);
+            @include g.display-large{
+                font-size: calc(g.$desk-h3-font-size * 1); 
+            };
+            margin: 5vh 0;
+        }.submit:hover{
+            background-color: g.$es-dark-color;
+        }.submit:disabled{
+            background-color: g.$es-light-color;
+            color: g.$grey-color;
+        }
+    }
+    .link{
+        color: white;
+        width: 100%;
+        @include g.create-flexbox(row, space-between);
+    }
+}

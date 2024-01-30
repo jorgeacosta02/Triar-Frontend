@@ -1,0 +1,19 @@
+@use "../../styles/globals" as g;
+
+.container{
+    height: g.$mobile-NavBar-height;
+    @include g.create-flexbox(column, center);
+}
+.menu{
+    box-sizing: border-box;
+    font-size: 35px;
+    width: 25px;
+    height: calc(g.$mobile-NavBar-height * .6);
+    fill: g.$dark-black-color;
+    z-index: 1000;
+    cursor: pointer;
+    margin-right: 5vw;
+    @include g.display-large{
+        display: none;
+    }
+}

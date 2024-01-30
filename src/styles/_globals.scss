@@ -1,0 +1,71 @@
+//Imports
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet');
+
+// General variables
+
+// Colors
+$es-color: rgb(241, 241, 9);
+$es-dark-color: rgb(195, 195, 6);
+$es-light-color: rgb(232, 232, 176);
+$ea-color: rgb(104, 129, 68);
+$ea-dark-color: rgb(82, 103, 54);
+$ea-light-color: rgb(159, 192, 113);
+$white-color: white;
+$dark-black-color: black;
+$light-black-color: rgb(33, 33, 33);
+$grey-color: grey;
+$red-color: red;
+
+// Fonts
+$primary-font: 'Roboto', sans-serif;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Mobile variables
+$mobile-NavBar-height: 14vh;
+$mobile-main-container-padding: 2vh 2vw;
+$mobile-h1-font-size: max(#{22px}, #{7vw});
+$mobile-h1-font-weight: 300;
+$mobile-h2-font-size: max(#{15px}, #{3vw});
+$mobile-h2-font-weight: 600;
+$mobile-h3-font-size: max(#{12px}, #{2.2vw});
+$mobile-h3-font-weight: 500;
+$mobile-p-font-size: max(#{12px}, #{1.8vw});
+$mobile-p-font-weight: 300;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//Desk variables
+$desk-NavBar-height: 90px;
+$desk-main-container-padding: 5vh 5vw;
+$desk-NavBar-font-size: min(#{12px}, #{1.5vw});
+$desk-h1-font-size: 38px;
+$desk-h1-font-weight: 700;
+$desk-h2-font-size: 30px;
+$desk-h2-font-weight: 600;
+$desk-h3-font-size: min(#{18px}, #{2.2vw});
+$desk-h3-font-weight: 500;
+$desk-p-font-size: min(#{15px}, #{3.5vw});
+$desk-p-font-weight: 400;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Breakpoints
+@mixin display-large {
+    @media only screen and (min-width: 800px){
+        @content;
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// Mixins
+@mixin create-flexbox($direction, $justify){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: center;
+}

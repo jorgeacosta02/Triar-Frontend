@@ -1,0 +1,109 @@
+@use '../../styles/globals' as g;
+
+.esadlbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    // background-color: red;
+}
+    
+.esadlbg::before {
+    content: "";
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    background-image: url('../../Assets/Images/Services/Voladura/blasting03.jpg');
+    background-size: cover;
+    // background-position: center;
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.eabg{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 50vw;
+    z-index: 1;
+}
+
+.eabg::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background-image: url('../../ExploagroSrc/EAAssets/EAImages/campo-04.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.esadlLinkContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    @include g.create-flexbox(row, center);
+}
+
+
+.eaLinkContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    @include g.create-flexbox(row, center);
+}
+
+
+.navLink{
+    box-sizing: border-box;
+    text-decoration: none;
+    position: relative;
+    height: 50vh;
+    width: 25vw;
+    max-width: 250px;
+    min-width: 70px;
+    border: 2px solid white;
+    border-radius: .5vw;
+    background-color: rgba(255,255,255,.5);
+    box-shadow: 7px 7px 5px rgba(0,0,0,.5);
+    z-index: 11;
+    transition: .1s ease;
+    @include g.create-flexbox(column, space-evenly);
+    img{
+        position: relative;
+        z-index: 10;
+        width: 80%;
+        max-width: 150px;
+    }
+}
+
+.navLink:hover{
+    transform: scale(1.1);
+    box-shadow: 12px 12px 12px rgba(0,0,0,.8);
+}
+
+.EAcontainer{
+    box-sizing: border-box;
+    text-decoration: none;
+    position: absolute;
+    top: 25vh;
+    right: 12.5vw;
+    height: 50vh;
+    width: 25vw;
+    border: 2px solid white;
+    @include g.create-flexbox(column, space-evenly);
+    z-index: 11;
+    .EAlogobrand{
+        position: relative;
+        z-index: 10;
+        height: 18%;
+    }
+}

@@ -1,0 +1,40 @@
+@use '../../styles/globals' as g;
+
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: g.$mobile-NavBar-height;
+    padding: g.$mobile-main-container-padding;
+    @include g.display-large{
+        margin-top: g.$desk-NavBar-height;
+    }
+    .our{
+        position: relative;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+    }
+    .equipmentsContainer{
+        position: relative;
+        width: 90vw;
+        padding: 10px;
+        @include g.create-flexbox(column, space-between);
+        align-items: center;
+        .equipment{
+            border-top: 2px solid g.$es-color;
+            @include g.create-flexbox(column, space-between);
+            padding: 10vh 0;
+            width: 90%;
+            @include g.display-large{
+                flex-direction: row;
+                width: 70vw;
+                gap: 3rem;
+            }
+            img{
+                max-width: 60vw;
+                max-height: 60vh;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

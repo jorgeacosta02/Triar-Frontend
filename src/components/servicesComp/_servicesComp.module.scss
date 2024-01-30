@@ -1,0 +1,134 @@
+@use '../../styles/globals' as g;
+
+.container{
+    max-width: 100%;
+    position: relative;
+    margin-top: g.$mobile-NavBar-height;
+    min-height: 100vh;
+    padding: 0 0 15vh;
+    .title{
+        font-size: g.$mobile-h1-font-size;
+        @include g.display-large{
+            font-size: g.$desk-h1-font-size;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    }
+    
+    .mainImage {
+        max-width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 270px;
+        overflow: hidden;
+        z-index: 1;
+        @include g.display-large{
+            width: 100vw;
+            height: 400px;
+        }
+    }
+
+    .mainImage::before {
+        content: "";
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        width: 100vw;
+        height: 70vh;
+        background-image: url('../../Assets/Images/Services/PerfParaProduccion/perfoProd01.png');
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        opacity: 1;
+        @include g.display-large{
+            width: 100vw;
+            height: 400px;
+        }
+    }
+
+    .mainText {
+        position: relative;
+        padding: 20px;
+        top: 0px;
+        z-index: 2;
+        color: g.$dark-black-color;
+        text-align: center;
+    }
+
+    .our{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        padding-top: 5vh;
+        border-top: 3px solid g.$es-color;
+    }
+
+    .allServicesContainer{
+        padding: g.$mobile-main-container-padding;
+        .serviceContainer{
+            .serviceContent{
+                @include g.create-flexbox(column, space-between);
+                margin-bottom: 10vh;
+                p{
+                    margin: 0;
+                    width: 90vw;
+                    @include g.display-large{
+                        width: 60vw;
+                        margin-bottom: 1vh;
+                    }
+                }
+            }
+            .serviceImgs{
+                @include g.create-flexbox(row, space-evenly);
+                flex-wrap: wrap;
+                gap: 1rem;
+                max-width: 90vw;
+                margin: 3vh 0;
+                overflow: hidden;
+                @include g.display-large{
+                    flex-direction: row;
+                }
+                img{
+                    max-width: 90vw;
+                    max-height: 60vh;
+                    @include g.display-large{
+                        max-width: 90vw;
+                        max-height: 45vh;
+                    }
+                }
+            }
+        }
+    }
+    .toolsContainer{
+        padding: 3vh 5vw;
+        border-top: 2px solid g.$es-color;
+        .toolsTitle{
+            text-align: center;
+        }
+        h3{
+            border: 1px solid g.$grey-color;
+            border-radius: 2vw;
+            padding: 2vh 2vw;
+            text-align: center;
+        }
+        .arrow{
+            position: relative;
+            width: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: solid transparent;
+            border-width: 20px;
+            margin-bottom: -20px;
+            border-top-color: g.$light-black-color;
+        }
+        .separator{
+            height: 30vh;
+        }
+        .shortSeparator{
+            height: 15vh;
+        }
+    }
+}

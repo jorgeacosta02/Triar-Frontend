@@ -1,0 +1,23 @@
+@use "../../styles/globals" as g;
+
+.container{
+    // background-color: red;
+    height: calc(g.$mobile-NavBar-height * .6);
+    .ESLogoImg{
+        margin-right: 1vw;
+        height: calc(g.$mobile-NavBar-height * .6);
+        // background-color: blue;
+        @include g.display-large{
+            width: auto;
+            height: 50px;
+        }
+    }
+    .ADLLogo{
+        margin-right: 1vw;
+        height: calc(g.$mobile-NavBar-height * .6);
+        @include g.display-large{
+            width: auto;
+            height: 50px;
+        }  
+    }
+}

@@ -1,0 +1,3 @@
+Interfaces :
+- Las interfaces se declaran en una carpeta interfaces y separadas en archivo por tema, salvo las específicas de redux.
+- Se nombran con la Letra I en manúscula (ej.: IUserData)

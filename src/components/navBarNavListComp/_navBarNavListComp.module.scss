@@ -1,0 +1,67 @@
+@use "../../styles/globals" as g;
+
+.navList{ // ul
+    position: absolute;
+    box-sizing: border-box;
+    list-style: none;
+    @include g.create-flexbox(column, space-between);
+    width: 90%;
+    top: calc(g.$mobile-NavBar-height - 16px + 3vh);
+    right: -100%;
+    transition: right .2s ease;
+    z-index: 200;
+    background-color: g.$white-color;
+    height: calc(100vh - (g.$mobile-NavBar-height) - 10vh);
+    font-weight: 600;
+    padding: 2vh 1px;
+    @include g.display-large{
+        justify-content: space-between;
+        flex-direction: row;
+        top: -13px;
+        height: g.$desk-NavBar-height;
+        font-size: g.$desk-NavBar-font-size;
+        font-weight: 300;
+        width: 50%;
+        min-width: 420px;
+        right: 5%;
+        line-height: g.$desk-NavBar-height;
+        background-color: transparent;
+    }
+    .navLink{// li
+        box-sizing: border-box;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        width: 70vw;
+        height: 8vh;
+        line-height: 8vh;
+        border-radius: 2vw;
+        color: g.$dark-black-color;
+        @include g.display-large{
+            width: 100%;
+            border-radius: .5vw;
+        }
+    }
+    .navLink:hover{
+        background-color: g.$es-color;
+        color:g.$dark-black-color;
+        transition: .2s ease;
+        @include g.display-large{
+            background-color: g.$white-color;
+            color: g.$es-dark-color;
+            transform:scale(1.1);
+        }
+    }
+    .splitBar{
+        @include g.display-large{
+            width: 1px;
+            height: calc(g.$desk-NavBar-height * .25);
+            background-color: rgb(95, 98, 0);
+        }
+    }
+}
+.show{// ul
+    right: 5%;
+    transition: right .3s ease;
+}
