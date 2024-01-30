@@ -28,6 +28,7 @@ const ProtectedRoutesPage = () => {
   }
 
 
+  
 
   if (!jwtSecret) {
     console.error('La clave secreta no está definida.');
