@@ -30,7 +30,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IUserDataFromDB } from '../Interfaces/userInterfaces';
-import { localStorageSetUserData } from '../components/localStorageComp/LocalStorageComp';
+// import { localStorageSetUserData } from '../components/localStorageComp/LocalStorageComp';
 
 // interface ApiResponse {
 //   user: IUserData;
@@ -38,12 +38,23 @@ import { localStorageSetUserData } from '../components/localStorageComp/LocalSto
 // }
 
 export const loginUser: any = createAsyncThunk('user/loginUser', async (credentials: { dni: number; password: string }) => {
+
+  
   try {
     const response = await axios.post<IUserDataFromDB, any>('/login', credentials);
+    console.log('response.data en loginUser: ', response.data);
+    const data = response.data;
+    // const user = data.user;
+    const jsonUserFromLocalStorage: any = localStorage.getItem('accessLogin');
+    console.log('jsonUserFromLocalStorage: ', jsonUserFromLocalStorage)
+    const userFLS = JSON.parse(jsonUserFromLocalStorage);
+    console.log('userFLS: ', userFLS);
+    if(userFLS.user === null){
+      localStorage.setItem('accessLogin', data)
+    }
     // const foundUser = response.data.user
-    console.log('response.data en loginAction: ', response.data);
-    localStorageSetUserData(response.data.user);
-    return response.data;
+    // localStorageSetUserData(response.data.user);
+    return data;
   } catch (error) {
     throw new Error('Error en la solicitud de inicio de sesión');
   }
