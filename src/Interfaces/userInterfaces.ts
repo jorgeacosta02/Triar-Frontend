@@ -8,7 +8,7 @@ export interface IUserData {
     phone: number;
     email: string;
     password: string;
-    status: boolean;
+    active: boolean;
     role: string;
 }
 
@@ -22,7 +22,7 @@ export interface IUserDataFromDB {
     phone: number;
     email: string;
     password: string;
-    status: boolean;
+    active: boolean;
     role: string;
 }
 
@@ -51,10 +51,14 @@ export interface ApiResponse {
 
 // LocalStorage 'user'
 export interface ILocalStorageUserData {
-    id: string,
-    firstName: string,
-    lastName: string,
-    role: string,
-    status: boolean
+    _id: string,
+    firstName: string;
+    lastName: string;
+    dni: number;
+    healthPlan?: string;
+    phone: number;
+    email: string;
+    active: boolean;
+    role: string;
 }
   

@@ -1,6 +1,6 @@
 // userSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { loginUser } from '../../app/loginActions';
+import { loginUser } from '../../app/actions';
 import { IUserData, ApiResponse } from '../../Interfaces/userInterfaces';
 
 

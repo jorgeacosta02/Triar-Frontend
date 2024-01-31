@@ -11,8 +11,9 @@ export const localStorageSetUserData = (data:IUserDataFromDB) => {
         firstName : data.firstName,
         lastName : data.lastName,
         dni: data.dni,
+        email: data.email,
+        active : data.active,
         role : data.role,
-        status : data.status,
     }
 
     console.log('data en localStorageSetUserData', data)
