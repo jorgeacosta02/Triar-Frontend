@@ -30,7 +30,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { IUserDataFromDB } from '../Interfaces/userInterfaces';
-import { localStorageSetUserData } from '../components/LocalStorage/LocalStorage';
+import { localStorageSetUserData } from '../components/localStorageComp/LocalStorageComp';
 
 // interface ApiResponse {
 //   user: IUserData;
