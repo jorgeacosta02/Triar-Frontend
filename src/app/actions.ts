@@ -49,7 +49,8 @@ export const loginUser: any = createAsyncThunk('user/loginUser', async (credenti
     console.log('jsonUserFromLocalStorage: ', jsonUserFromLocalStorage)
     const userFLS = JSON.parse(jsonUserFromLocalStorage);
     console.log('userFLS: ', userFLS);
-    if(userFLS.user === null){
+    console.log('userFLS.user :', userFLS?.user );
+    if(userFLS?.user === null){
       localStorage.setItem('accessLogin', data)
     }
     // const foundUser = response.data.user
