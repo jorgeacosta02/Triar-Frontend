@@ -11,8 +11,8 @@ import TasksPage from './pages/taskPages/TasksPage';
 import AddTaskPage from './pages/taskPages/AddTaskPage';
 import TaskByIdPage from './pages/taskPages/TaskByIdPage';
 import ProfilePage from './pages/profilePage/ProfilePage';
-import ProtectedRoutesPage from './components/protectedRoutesComp/ProtectedRoutesComp';
-
+import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesComp/EmployeesRoutesComp';
+import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 
 const App = () => {
   return (
@@ -25,11 +25,14 @@ const App = () => {
         <Route path='/login' element={<LoginPage/>}/>
 
         {/*Protected Routes*/}
-       <Route element={<ProtectedRoutesPage/>}>
+       <Route element={<EmployeesRoutesComp/>}>
         <Route path='/tasks' element={<TasksPage/>}/>
-        <Route path='/add-task' element={<AddTaskPage/>}/>
         <Route path='/task/:id' element={<TaskByIdPage/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>
+       </Route>
+       <Route element={<AdminRoutesComp/>}>
+        <Route path='/add-task' element={<AddTaskPage/>}/>
+
        </Route>
   
 

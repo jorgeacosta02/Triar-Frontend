@@ -1,12 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { getUserFromLocalStorage } from "../localStorageComp/LocalStorageComp";
+import { getUserFromLocalStorage } from "../../localStorageComp/LocalStorageComp";
 
 
-const ProtectedRoutesPage = () => {
+const AdminRoutesComp = () => {
 
   const userFLS = getUserFromLocalStorage();
 
-  if (userFLS?.user?.role === 'user' && userFLS.user.active) {
+  if (userFLS?.user?.role === 'admin' && userFLS.user.active) {
     console.log('dentro del if')
     return <Outlet/>;
   }
@@ -14,4 +14,4 @@ const ProtectedRoutesPage = () => {
   return <Navigate to='/login' />
 };
 
-export default ProtectedRoutesPage;
+export default AdminRoutesComp
