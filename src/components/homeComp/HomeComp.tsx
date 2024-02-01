@@ -1,4 +1,4 @@
-import styles from './_companyComp.module.scss';
+import styles from './_HomeComp.module.scss';
 import imgTroy from '../../Assets/Images/clients/troy.png'
 import imgAustralGold from '../../Assets/Images/clients/australgold.png'
 import imgBarrick from '../../Assets/Images/clients/barrick.png'
@@ -16,7 +16,7 @@ import imgBajoAlum from '../../Assets/Images/clients/alumbrera.jpg'
 import { useSelector } from 'react-redux';
 
 
-const CompanyComp = () => {
+const HomeComp = () => {
 
   
   const userAuthCompleteReducer = useSelector((state: any) => state.userAuth);
@@ -75,8 +75,7 @@ const CompanyComp = () => {
         <p>Con una extensa experiencia trabajando asociados a nuestros clientes desde las etapas iniciales hasta el final de cada proyecto, ofrecemos un amplio rango de alternativas adaptándonos para cubir cada necesidad específica.</p>
       </div>
     </div>
-    // Minera salta, xtrata copper, pachon sa minera, minas argentinas, bajo la alumnbrera minera alumbrera Ymad ute., comision nacional de energía atómica.
   )
 }
 
-export default CompanyComp
+export default HomeComp

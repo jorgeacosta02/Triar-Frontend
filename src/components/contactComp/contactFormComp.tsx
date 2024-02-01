@@ -10,7 +10,7 @@ import {
 
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import styles from './_contactFormComp.module.scss';
+import styles from './_ContactFormComp.module.scss';
 
 
 export interface FormDataShape {

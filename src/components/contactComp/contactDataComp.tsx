@@ -1,4 +1,4 @@
-import styles from './_contactDataComp.module.scss'
+import styles from './_ContactDataComp.module.scss'
 
 const ContactDataComp = () => {
   return (

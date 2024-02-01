@@ -29,7 +29,7 @@ const LoginComp = () => {
     console.log('data en onSubmit ', data)
     dispatch(loginUser(data));
     reset();
-    navigate('/company');
+    navigate('/');
   };
   
   console.log('userAuth en LoginComp:  ',userAuth);

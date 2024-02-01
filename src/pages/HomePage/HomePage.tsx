@@ -1,8 +1,8 @@
 import NavBarLayout from '../../layouts/navBarLayout/navBarLayout'
-import CompanyComp from '../../components/companyComp/companyComp'
+import CompanyComp from '../../components/HomeComp/HomeComp'
 import FooterComp from '../../components/footerComp/footerComp'
 
-const CompanyPage = () => {
+const HomePage = () => {
   return (
     <div>
       <NavBarLayout />
@@ -12,4 +12,4 @@ const CompanyPage = () => {
   )
 }
 
-export default CompanyPage
+export default HomePage

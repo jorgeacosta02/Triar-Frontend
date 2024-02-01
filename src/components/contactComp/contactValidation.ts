@@ -1,4 +1,4 @@
-import { FormDataShape } from "./contactFormComp"
+import { FormDataShape } from "./ContactFormComp"
 
 
 // REGEX

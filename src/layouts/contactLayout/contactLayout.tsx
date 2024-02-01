@@ -1,6 +1,6 @@
 import styles from './_contactLayout.module.scss'
-import ContactFormComp from '../../components/contactComp/contactFormComp'
-import ContactDataComp from '../../components/contactComp/contactDataComp'
+import ContactFormComp from '../../components/contactComp/ContactFormComp'
+import ContactDataComp from '../../components/contactComp/ContactDataComp'
 
 const ContactLayout = () => {
   return (

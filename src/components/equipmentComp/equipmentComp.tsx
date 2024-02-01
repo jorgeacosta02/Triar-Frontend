@@ -1,4 +1,4 @@
-import styles from './_equipmentComp.module.scss'
+import styles from './_EquipmentComp.module.scss'
 import frd from '../../Assets/Images/equipment/frd1200-01.png'
 import atlas from '../../Assets/Images/equipment/atlas-f9-01.png'
 import tamrock from '../../Assets/Images/equipment/tamrock01.png'

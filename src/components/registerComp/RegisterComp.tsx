@@ -2,7 +2,6 @@ import styles from './_RegisterComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userSchema } from '../../validations/zodSchemas';
-// import { registerRequest } from '../../requests/requests';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { IRegisterData } from '../../Interfaces/userInterfaces';
@@ -24,8 +23,6 @@ const RegisterComp
 
   const API = 'http://localhost:3001'
 
-  // export const registerRequest = (user: IUserData) => axios.post(`${API}/register`, user)
-
   const onSubmit: SubmitHandler<IRegisterData> = async (data) => {
     console.log(data);
     try {
@@ -42,12 +39,6 @@ const RegisterComp
     }
     }
   };
-  
-  // const firstName = watch('firstName');
-  // const lastName = watch('lastName');
-  // const dni = watch('dni');
-
-  // console.log('Watched Fields:', { firstName, lastName, dni });
 
   console.log(errors);
 
@@ -91,7 +82,6 @@ const RegisterComp
             )}
               placeholder='Ingrese su obra social...'
           />
-          {/* {errors.healthPlan && <span>{errors.healthPlan.message}</span>} */}
         </div>
         <div className={styles.inputBlock}>
           <label htmlFor='phone'>Teléfono</label>
@@ -133,9 +123,6 @@ const RegisterComp
           Ingresar
         </Link>
       </p>
-      {/* <div>
-        {JSON.stringify(watch(), null, 2)}
-      </div> */}
     </div>
   )
 }
