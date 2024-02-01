@@ -44,12 +44,12 @@
         }
     }
     .navLink:hover{
-        background-color: g.$es-color;
+        background-color: g.$main-color;
         color:g.$dark-black-color;
         transition: .2s ease;
         @include g.display-large{
             background-color: transparent;
-            color: g.$es-dark-color;
+            color: g.$main-dark-color;
             transform:scale(1.1);
         }
     }
@@ -64,7 +64,7 @@
     .loginLinks{
         @include g.display-large{
             @include g.create-flexbox(row, space-evenly);
-            background-color: g.$es-light-color;
+            background-color: g.$main-light-color;
             border-radius: 50% / 180%;
             height: 80%;
             width: 28%;
@@ -90,12 +90,12 @@
             }
         }
         .logLink:hover{
-            background-color: g.$es-color;
+            background-color: g.$main-color;
             color:g.$dark-black-color;
             transition: .2s ease;
             @include g.display-large{
                 background-color: transparent;
-                color: g.$es-dark-color;
+                color: g.$main-dark-color;
                 transform:scale(1.1);
             }
         }

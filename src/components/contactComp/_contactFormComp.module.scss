@@ -72,7 +72,7 @@
             cursor: pointer;
             border:none;
             color: g.$dark-black-color;
-            background-color: g.$es-color;
+            background-color: g.$main-color;
             border-radius: 4px;
             width: 70%;
             height: 36px;
@@ -82,9 +82,9 @@
                 font-size: calc(g.$desk-h3-font-size * 1); 
             };
         }.submit:hover{
-            background-color: g.$es-dark-color;
+            background-color: g.$main-dark-color;
         }.submit:disabled{
-            background-color: g.$es-light-color;
+            background-color: g.$main-light-color;
             color: g.$grey-color;
         }
     }

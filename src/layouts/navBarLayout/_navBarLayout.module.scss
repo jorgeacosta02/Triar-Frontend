@@ -10,10 +10,10 @@
     left: 0;
     padding: 0 2vw;
     margin: 0;
-    background-color: g.$white-color;
+    background-color: g.$main-color;
     @include g.create-flexbox(row, space-between);
     z-index: 1000;
-    border-bottom: 10px solid g.$es-color;
+    border-bottom: 10px solid g.$main-color;
     @include g.display-large{
         height: g.$desk-NavBar-height;
     }

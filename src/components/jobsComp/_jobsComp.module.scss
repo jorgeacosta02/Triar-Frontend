@@ -22,7 +22,7 @@
         .work{
             width: 90%;
             padding-bottom: 12vh;
-            border-top: 2px solid g.$es-color;
+            border-top: 2px solid g.$main-color;
             .workData{
                 @include g.create-flexbox(column, space-between);
                 @include g.display-large{
