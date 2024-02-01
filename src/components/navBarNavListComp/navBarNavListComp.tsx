@@ -88,20 +88,25 @@ const NavBarNavListComp = () => {
         {accessLogin?.user?.id || userAuthId?.data?.user?.id
         ? <li>
             <NavLink to='/profile'>
-              <p>{accessLogin.user.firstName}</p>
+              <p
+                className={styles.capital}
+              >
+                {/* {accessLogin.user.firstName.charAt(0).toUpperCase()} */}
+                Mi perfil
+              </p>
             </NavLink>
           </li>
           : <div  className={styles.loginLinks}>
               <li onClick={handleClick} >
                 <NavLink
                   to="/login" 
-                  className={styles.navLink} 
+                  className={styles.logLink} 
                 >Ingresar</NavLink>
               </li>
               <li onClick={handleClick} >
                 <NavLink
                   to="/register" 
-                  className={styles.navLink} 
+                  className={styles.logLink} 
                   >Registrarse</NavLink>
               </li>
             </div>

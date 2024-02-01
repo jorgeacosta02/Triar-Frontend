@@ -21,7 +21,7 @@
         height: g.$desk-NavBar-height;
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
-        width: 50%;
+        width: 60%;
         min-width: 420px;
         right: 5%;
         line-height: g.$desk-NavBar-height;
@@ -60,6 +60,7 @@
             background-color: rgb(95, 98, 0);
         }
     }
+ 
     .loginLinks{
         @include g.display-large{
             @include g.create-flexbox(row, space-evenly);
@@ -67,6 +68,36 @@
             border-radius: 50% / 180%;
             height: 80%;
             width: 28%;
+            margin-left: 2vw;
+        }
+        .logLink{// li
+            box-sizing: border-box;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            width: 70vw;
+            height: 8vh;
+            line-height: 8vh;
+            border-radius: 2vw;
+            color: g.$dark-black-color;
+            @include g.display-large{
+                width: 100%;
+                border-radius: .5vw;
+                color: g.$white-color;
+                font-weight: 400;
+                font-size: calc(g.$desk-p-font-size * .9);
+            }
+        }
+        .logLink:hover{
+            background-color: g.$es-color;
+            color:g.$dark-black-color;
+            transition: .2s ease;
+            @include g.display-large{
+                background-color: transparent;
+                color: g.$es-dark-color;
+                transform:scale(1.1);
+            }
         }
     }
 }

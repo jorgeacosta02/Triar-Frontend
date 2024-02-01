@@ -16,17 +16,22 @@ const ProfileComp = () => {
         navigate('/company');
     }
 
+    const goBackHandler = () => {
+        navigate(-1)
+    }
+
     return (
         <div className={styles.container}>
             <h1>Mi perfil</h1>
             <div className={styles.data}>
                 <p>{`Nombre: ${user.firstName}`}</p>
                 <p>{`Apellido: ${user.lastName}`}</p>
-                <p>{`Dni: ${user.dni}`}</p>
+                <p>{`Dni: ${user.dni ? user.dni : 'sin número'}`}</p>
                 <p>{`Teléfono: ${user.phone}`}</p>
                 <p>{`Email: ${user.email}`}</p>
             </div>
             <button onClick={clickHandler}>Cerrar sesión</button>
+            <button onClick={goBackHandler}>Volver</button>
         </div>
     )
 }
