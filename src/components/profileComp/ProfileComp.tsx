@@ -1,0 +1,34 @@
+import styles from './_ProfileComp.module.scss'
+import { getUserFromLocalStorage, cleanUserInlocalStorage } from '../localStorageComp/LocalStorageComp'
+import { Navigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../app/actions';
+
+const ProfileComp = () => {
+
+    const dispatch = useDispatch();
+
+    const user = getUserFromLocalStorage().user;
+
+    const clickHandler = () => {
+        cleanUserInlocalStorage();
+        dispatch(loginUser());
+        <Navigate to='/company'/>
+    }
+
+    return (
+        <div className={styles.container}>
+            <h1>Mi perfil</h1>
+            <div className={styles.data}>
+                <p>{`Nombre: ${user.firstName}`}</p>
+                <p>{`Apellido: ${user.lastName}`}</p>
+                <p>{`Dni: ${user.dni}`}</p>
+                <p>{`Teléfono: ${user.phone}`}</p>
+                <p>{`Email: ${user.email}`}</p>
+            </div>
+            <button onClick={clickHandler}>Cerrar sesión</button>
+        </div>
+    )
+}
+
+export default ProfileComp

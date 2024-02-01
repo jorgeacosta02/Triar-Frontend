@@ -3,8 +3,13 @@ import styles from './_navBarNavListComp.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState } from "../../features/menu/menuSlice";
 import { falseMenu } from "../../features/menu/menuSlice";
+import { getUserFromLocalStorage } from "../localStorageComp/LocalStorageComp";
+
 
 const NavBarNavListComp = () => {
+
+  const accessLogin = getUserFromLocalStorage();
+  console.log('user in navBarNavList:', accessLogin);
 
   // si utilizo useSelector con menuReducer no necesito importarlo
   const menuCompleteReducer = useSelector((state: any) => state.menu.menu);
@@ -72,18 +77,29 @@ const NavBarNavListComp = () => {
             className={styles.navLink} 
            >Tareas</NavLink>
         </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/login" 
-            className={styles.navLink} 
-           >Ingresar</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/register" 
-            className={styles.navLink} 
-           >Registrarse</NavLink>
-        </li>
+
+
+        {accessLogin?.user?.id
+        ? <li>
+            <NavLink to='/profile'>
+              <p>Mi perfil</p>
+            </NavLink>
+          </li>
+          : <div>
+              <li onClick={handleClick} >
+                <NavLink
+                  to="/login" 
+                  className={styles.navLink} 
+                >Ingresar</NavLink>
+              </li>
+              <li onClick={handleClick} >
+                <NavLink
+                  to="/register" 
+                  className={styles.navLink} 
+                  >Registrarse</NavLink>
+              </li>
+            </div>
+          }
       </ul>
   )
 }

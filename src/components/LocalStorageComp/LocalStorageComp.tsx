@@ -31,3 +31,7 @@ export const getUserFromLocalStorage = () => {
     console.log('userFLS.user.role: ', userFLS?.user?.role);
     return userFLS
 }
+
+export const cleanUserInlocalStorage = () => {
+    localStorage.removeItem('accessLogin');
+}
