@@ -48,7 +48,7 @@
         color:g.$dark-black-color;
         transition: .2s ease;
         @include g.display-large{
-            background-color: g.$white-color;
+            background-color: transparent;
             color: g.$es-dark-color;
             transform:scale(1.1);
         }
@@ -58,6 +58,15 @@
             width: 1px;
             height: calc(g.$desk-NavBar-height * .25);
             background-color: rgb(95, 98, 0);
+        }
+    }
+    .loginLinks{
+        @include g.display-large{
+            @include g.create-flexbox(row, space-evenly);
+            background-color: g.$es-light-color;
+            border-radius: 50% / 180%;
+            height: 80%;
+            width: 28%;
         }
     }
 }

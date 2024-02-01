@@ -8,18 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuth } from '../../features/userAuth/userAuthSlice';
 import { loginUser } from '../../app/actions';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 
 const LoginComp = () => {
 
-  // const userAuth = useSelector((state: any) => state.userAuth);
   const userAuth = useSelector(selectUserAuth);
-
-  const [shouldRedirect, setShouldRedirect] = useState(false);
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const {
@@ -35,7 +29,7 @@ const LoginComp = () => {
     console.log('data en onSubmit ', data)
     dispatch(loginUser(data));
     reset();
-    navigate('/company')
+    navigate('/company');
   };
   
   console.log('userAuth en LoginComp:  ',userAuth);
@@ -45,15 +39,7 @@ const LoginComp = () => {
   const userAuthCompleteReducer = useSelector((state: any) => state.userAuth.data);
   console.log('userAuthCompleteReducer state.usrerAuth.data in LoginAction :',userAuthCompleteReducer);
 
-  // Extraigo el token de la cookie
- // Función para obtener el valor de una cookie específica
  
-
-
-
-  // const userFromLocalStorage = localStorage.getItem('user');
-  // console.log('user de localStorage en LoginPage: ', JSON.parse(userFromLocalStorage));
-
   return (
     <div className={styles.container}>
        <form

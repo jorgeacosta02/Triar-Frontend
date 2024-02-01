@@ -7,8 +7,6 @@ import { getUserFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 import { selectUserAuth } from "../../features/userAuth/userAuthSlice";
 
 
-
-
 const NavBarNavListComp = () => {
 
   const accessLogin = getUserFromLocalStorage();
@@ -18,23 +16,7 @@ const NavBarNavListComp = () => {
   const userAuth = useSelector(selectUserAuth); 
   const userAuthId = userAuth?.data?.user?.id;
   console.log(userAuth)
-  //   window.location.reload();
-  //   compareToReload = userId
-  // }
-
-
-  // useEffect(() => {
-  //   // Lógica a ejecutar justo antes de que el componente se desmonte
-  //   return () => {
-  //     console.log('Componente está siendo desmontado.');
-
-  //     // Realizar acciones necesarias antes del desmontaje
-
-  //     // Forzar la recarga de la página
-  //     window.location.reload();
-  //   };
-  // }, []);
-
+  
   // si utilizo useSelector con menuReducer no necesito importarlo
   const menuCompleteReducer = useSelector((state: any) => state.menu.menu);
   // si lo utilizo con la slice separada, sí necesito importarlo.
@@ -109,7 +91,7 @@ const NavBarNavListComp = () => {
               <p>{accessLogin.user.firstName}</p>
             </NavLink>
           </li>
-          : <div>[
+          : <div  className={styles.loginLinks}>
               <li onClick={handleClick} >
                 <NavLink
                   to="/login" 
@@ -121,7 +103,7 @@ const NavBarNavListComp = () => {
                   to="/register" 
                   className={styles.navLink} 
                   >Registrarse</NavLink>
-              </li>]
+              </li>
             </div>
           }
       </ul>
