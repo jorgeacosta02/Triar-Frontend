@@ -16,17 +16,14 @@ const initialState: UserState = {
     error: null,
 };
 
-// export const loginAction = createAsyncThunk('user/login', async (thunkAPI) => {
-//     const response = await axios('http://localhost:3001/login',{
-//         method:"GET"
-//     });
-//     console.log(response)
-// })
-
 const userSlice = createSlice({
     name: 'userAuth',
     initialState,
-    reducers: {},
+    reducers: {
+      cleanUser : (state) => {
+        state.data = null
+      }
+    },
     extraReducers: (builder) => {
         builder
         .addCase(loginUser.pending, (state) => {
@@ -52,6 +49,8 @@ const userSlice = createSlice({
         );
     },
 });
+
+export const { cleanUser } = userSlice.actions;
 
 export default userSlice.reducer;
 

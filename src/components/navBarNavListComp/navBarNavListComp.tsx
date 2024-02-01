@@ -4,12 +4,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState } from "../../features/menu/menuSlice";
 import { falseMenu } from "../../features/menu/menuSlice";
 import { getUserFromLocalStorage } from "../localStorageComp/LocalStorageComp";
+import { selectUserAuth } from "../../features/userAuth/userAuthSlice";
+
+
 
 
 const NavBarNavListComp = () => {
 
   const accessLogin = getUserFromLocalStorage();
   console.log('user in navBarNavList:', accessLogin);
+  const userId = accessLogin?.user?.id;
+  console.log('userId en NavBarNavListComp: ', userId);
+  const userAuth = useSelector(selectUserAuth); 
+  const userAuthId = userAuth?.data?.user?.id;
+  console.log(userAuth)
+  //   window.location.reload();
+  //   compareToReload = userId
+  // }
+
+
+  // useEffect(() => {
+  //   // Lógica a ejecutar justo antes de que el componente se desmonte
+  //   return () => {
+  //     console.log('Componente está siendo desmontado.');
+
+  //     // Realizar acciones necesarias antes del desmontaje
+
+  //     // Forzar la recarga de la página
+  //     window.location.reload();
+  //   };
+  // }, []);
 
   // si utilizo useSelector con menuReducer no necesito importarlo
   const menuCompleteReducer = useSelector((state: any) => state.menu.menu);
@@ -79,13 +103,13 @@ const NavBarNavListComp = () => {
         </li>
 
 
-        {accessLogin?.user?.id
+        {accessLogin?.user?.id || userAuthId?.data?.user?.id
         ? <li>
             <NavLink to='/profile'>
-              <p>Mi perfil</p>
+              <p>{accessLogin.user.firstName}</p>
             </NavLink>
           </li>
-          : <div>
+          : <div>[
               <li onClick={handleClick} >
                 <NavLink
                   to="/login" 
@@ -97,7 +121,7 @@ const NavBarNavListComp = () => {
                   to="/register" 
                   className={styles.navLink} 
                   >Registrarse</NavLink>
-              </li>
+              </li>]
             </div>
           }
       </ul>

@@ -7,7 +7,7 @@ import { ILoginData } from '../../Interfaces/userInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuth } from '../../features/userAuth/userAuthSlice';
 import { loginUser } from '../../app/actions';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -19,6 +19,8 @@ const LoginComp = () => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -33,7 +35,7 @@ const LoginComp = () => {
     console.log('data en onSubmit ', data)
     dispatch(loginUser(data));
     reset();
-    setShouldRedirect(true);
+    navigate('/company')
   };
   
   console.log('userAuth en LoginComp:  ',userAuth);
@@ -52,9 +54,7 @@ const LoginComp = () => {
   // const userFromLocalStorage = localStorage.getItem('user');
   // console.log('user de localStorage en LoginPage: ', JSON.parse(userFromLocalStorage));
 
-  return shouldRedirect ? (
-    <Navigate to='/company' />
-  ):(
+  return (
     <div className={styles.container}>
        <form
         onSubmit={handleSubmit(onSubmit)}

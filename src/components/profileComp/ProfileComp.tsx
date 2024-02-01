@@ -1,19 +1,19 @@
 import styles from './_ProfileComp.module.scss'
 import { getUserFromLocalStorage, cleanUserInlocalStorage } from '../localStorageComp/LocalStorageComp'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../app/actions';
+import { cleanUser } from '../../features/userAuth/userAuthSlice'
 
 const ProfileComp = () => {
 
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const user = getUserFromLocalStorage().user;
 
     const clickHandler = () => {
         cleanUserInlocalStorage();
-        dispatch(loginUser());
-        <Navigate to='/company'/>
+        dispatch(cleanUser());
+        navigate('/company');
     }
 
     return (

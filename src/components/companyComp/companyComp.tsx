@@ -15,11 +15,14 @@ import imgMASA from '../../Assets/Images/clients/minas_argentinas_s_a_logo.jpg'
 import imgBajoAlum from '../../Assets/Images/clients/alumbrera.jpg'
 import { useSelector } from 'react-redux';
 
+
 const CompanyComp = () => {
 
+  
   const userAuthCompleteReducer = useSelector((state: any) => state.userAuth);
   console.log('state.userAuth in ProtectedRoutes :', userAuthCompleteReducer.data);
-  console.log('company')
+  console.log('company');
+
 
   return (
     <div className={styles.container}>
