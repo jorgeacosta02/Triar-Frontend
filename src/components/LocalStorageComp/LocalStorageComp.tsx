@@ -20,3 +20,14 @@ export const localStorageSetUserData = (data:IUserDataFromDB) => {
    
     localStorage.setItem("user", JSON.stringify(user))
 }
+
+
+export const getUserFromLocalStorage = () => {
+    const jsonUserFromLocalStorage: any = localStorage.getItem('accessLogin');
+    console.log('jsonUserFromLocalStorage: ', jsonUserFromLocalStorage);
+    const userFLS = JSON.parse(jsonUserFromLocalStorage);
+    console.log('userFLS: ', userFLS);
+    console.log('userFLS.user :', userFLS?.user );
+    console.log('userFLS.user.role: ', userFLS?.user?.role);
+    return userFLS
+}
