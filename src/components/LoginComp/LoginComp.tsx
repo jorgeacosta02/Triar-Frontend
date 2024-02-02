@@ -45,10 +45,10 @@ const LoginComp = () => {
        <form
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className={styles.title}>
+        <h2 className={styles.title}>
           Ingresar
-        </h1>
-       <div className={styles.inputBlock}>
+        </h2>
+        <div className={styles.inputBlock}>
           <label htmlFor='dni'>Dni</label>
           <input type='text' {...register(
             'dni',
@@ -75,12 +75,15 @@ const LoginComp = () => {
       </form>
       <p className={styles.link}>
         Aún no tenés una cuenta?
-        <Link to='/register'>
+        <Link 
+          to='/register'
+          className={styles.register}
+        >
           Registrarse
         </Link>
       </p>
-        <Link to='/company'>Company</Link>
-        <Link to='/tasks'>TasksPage</Link>
+        {/* <Link to='/company'>Company</Link>
+        <Link to='/tasks'>TasksPage</Link> */}
     </div>
   )
 }

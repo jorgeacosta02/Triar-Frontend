@@ -1,4 +1,4 @@
-import styles from './_RegisterComp.module.scss';
+import styles from '../loginComp/_LoginComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userSchema } from '../../validations/zodSchemas';
@@ -119,7 +119,10 @@ const RegisterComp
       </form>
       <p className={styles.link}>
         Ya tenés una cuenta?
-        <Link to='/login'>
+        <Link 
+          to='/login'
+          className={styles.register}
+        >
           Ingresar
         </Link>
       </p>

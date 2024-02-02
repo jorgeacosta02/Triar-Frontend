@@ -1,5 +1,5 @@
 import NavBarLayout from '../../layouts/navBarLayout/navBarLayout'
-import CompanyComp from '../../components/HomeComp/HomeComp'
+import CompanyComp from '../../components/homeComp/HomeComp'
 import FooterComp from '../../components/footerComp/footerComp'
 
 const HomePage = () => {
