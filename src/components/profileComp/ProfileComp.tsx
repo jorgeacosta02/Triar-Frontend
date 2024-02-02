@@ -24,8 +24,8 @@ const ProfileComp = () => {
         <div className={styles.container}>
             <h1>Mi perfil</h1>
             <div className={styles.data}>
-                <p>{`Nombre: ${user.firstName}`}</p>
-                <p>{`Apellido: ${user.lastName}`}</p>
+                <p>{`Nombre: ${user.firstName.toUpperCase()}`}</p>
+                <p>{`Apellido: ${user.lastName.toUpperCase()}`}</p>
                 <p>{`Dni: ${user.dni ? user.dni : 'sin número'}`}</p>
                 <p>{`Teléfono: ${user.phone}`}</p>
                 <p>{`Email: ${user.email}`}</p>
