@@ -18,18 +18,19 @@ const HomeComp = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const userAuthCompleteReducer = useSelector((state: any) => state.userAuth);
+  console.log('userAuthCompleteReducer.data :', userAuthCompleteReducer.data);
+  console.log('company');
+
   useEffect(() => {
     const interval = setInterval(() => {
       // Cambia a la siguiente imagen cada 3 segundos (ajusta según tus necesidades)
       setCurrentSlide((prevSlide) => (prevSlide + 1) % 11);
     }, 3000); // Intervalo de 3 segundos
     return () => clearInterval(interval);
-  }, []); // Se ejecuta solo una vez al montar el componente
+  }, [userAuthCompleteReducer]); // Se ejecuta solo una vez al montar el componente
 
   
-  const userAuthCompleteReducer = useSelector((state: any) => state.userAuth);
-  console.log('state.userAuth in ProtectedRoutes :', userAuthCompleteReducer.data);
-  console.log('company');
 
 
   return (

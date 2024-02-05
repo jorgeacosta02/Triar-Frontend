@@ -8,7 +8,7 @@ import App from './App.tsx'
 import './_main.module.scss'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'http://localhost:4000'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>

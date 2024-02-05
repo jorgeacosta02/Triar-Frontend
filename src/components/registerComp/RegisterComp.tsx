@@ -21,7 +21,7 @@ const RegisterComp
   });
 
 
-  const API = 'http://localhost:3001'
+  const API = 'http://localhost:4000'
 
   const onSubmit: SubmitHandler<IRegisterData> = async (data) => {
     console.log(data);

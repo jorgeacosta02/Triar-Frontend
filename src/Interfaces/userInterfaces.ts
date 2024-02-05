@@ -3,9 +3,9 @@
 export interface IUserData {
     firstName: string;
     lastName: string;
-    dni: number;
+    dni: string;
     healthPlan?: string;
-    phone: number;
+    phone: string;
     email: string;
     password: string;
     active: boolean;
@@ -17,9 +17,9 @@ export interface IUserDataFromDB {
     _id: string,
     firstName: string;
     lastName: string;
-    dni: number;
+    dni: string;
     healthPlan?: string;
-    phone: number;
+    phone: string;
     email: string;
     password: string;
     active: boolean;
@@ -30,16 +30,16 @@ export interface IUserDataFromDB {
 export interface IRegisterData {
     firstName: string;
     lastName: string;
-    dni: number;
+    dni: string;
     healthPlan?: string;
-    phone: number;
+    phone: string;
     email: string;
     password: string;
 }
 
 // LOGIN
 export interface ILoginData {
-    dni: number;
+    dni: string;
     password: string;
   }
 
@@ -54,9 +54,9 @@ export interface ILocalStorageUserData {
     _id: string,
     firstName: string;
     lastName: string;
-    dni: number;
+    dni: string;
     healthPlan?: string;
-    phone: number;
+    phone: string;
     email: string;
     active: boolean;
     role: string;
