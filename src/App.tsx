@@ -13,15 +13,14 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesComp/EmployeesRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 import HomePage from './pages/HomePage/HomePage';
-import CalendarLayout from './layouts/calendarLayout/CalendarLayout';
-
+import CalendarPage from './pages/calendarPage/CalendarPage';
 const App = () => {
   return (
     <div>
       <Routes>
 
         {/*General Routes*/}
-        <Route path="/calendar" element={<CalendarLayout />} />
+        <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path='/register' element={<RegisterPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>

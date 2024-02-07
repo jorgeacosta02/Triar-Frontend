@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import DayCalendarComp from '../dayCalendarComp/DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
+import DayCalendarComp from './DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
 
-const MyCalendar: React.FC = () => {
+const CalendarComp: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   // Configuración del localizador de fechas
@@ -33,12 +33,15 @@ const MyCalendar: React.FC = () => {
       />
 
       {/* Vista de día */}
-      {/* <DayCalendarComp selectedDate={selectedDate} /> */}
+      <div>
+
+      <DayCalendarComp selectedDate={selectedDate} />
+      </div>
     </div>
   );
 };
 
-export default MyCalendar;
+export default CalendarComp;
 
 
 
