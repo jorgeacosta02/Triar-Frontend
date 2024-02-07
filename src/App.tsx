@@ -13,6 +13,7 @@ import ProfilePage from './pages/profilePage/ProfilePage';
 import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesComp/EmployeesRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 import HomePage from './pages/HomePage/HomePage';
+import MyCalendar from './components/calendarComp/CalendarComp';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
 
         {/*General Routes*/}
+        <Route path="/calendar" element={<MyCalendar />} />
         <Route path="/" element={<HomePage />} />
         <Route path='/register' element={<RegisterPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
