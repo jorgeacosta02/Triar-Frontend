@@ -1,0 +1,15 @@
+@use '../../styles/globals' as g;
+
+
+.Container{
+    background-color: blue;
+    height: 80vh;
+    .calendar{
+        background-color: red;
+        height: 50vh;
+        @include g.create-flexbox(column, space-around);
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+    }
+}
