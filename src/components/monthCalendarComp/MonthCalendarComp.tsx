@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import Day from './Day'; // Suponiendo que tienes un componente Day en un archivo separado
+import DayCalendarComp from '../dayCalendarComp/DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
 
 const MyCalendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -33,7 +33,7 @@ const MyCalendar: React.FC = () => {
       />
 
       {/* Vista de día */}
-      <Day selectedDate={selectedDate} />
+      {/* <DayCalendarComp selectedDate={selectedDate} /> */}
     </div>
   );
 };
