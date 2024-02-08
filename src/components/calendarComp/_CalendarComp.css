@@ -1,0 +1,29 @@
+/* 
+.rbc-calendar{
+    background-color: blue;
+    width: 50vw;
+    height: 50vh;
+    min-height: 300px;
+}
+.rbc-calendar{
+    .rbc-toolbar{
+        background-color: red;
+    }
+}
+.rbc-time-view{
+    background-color: green;
+}
+.rbc-timeslot-group{
+    background-color: aqua;
+    height: 50vh;
+} */
+/* body{
+    height: 100vh;
+}
+div{
+    height: 50vh;
+}
+.rbc-month-view{
+    height: 100vh;
+    background-color: red;
+} */

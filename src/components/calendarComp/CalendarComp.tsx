@@ -1,83 +1,377 @@
-import { FC, useState } from 'react'
-import { Calendar, dateFnsLocalizer, Event } from 'react-big-calendar'
-import withDragAndDrop, { withDragAndDropProps } from 'react-big-calendar/lib/addons/dragAndDrop'
-import format from 'date-fns/format'
-import parse from 'date-fns/parse'
-import startOfWeek from 'date-fns/startOfWeek'
-import getDay from 'date-fns/getDay'
-import enUS from 'date-fns/locale/en-US'
-import es from 'date-fns/locale/es'
-import addHours from 'date-fns/addHours'
-import startOfHour from 'date-fns/startOfHour'
+// import './_CalendarComp.css'
+// import React, { FC, useState } from 'react';
+// import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
+// import { format, parse, startOfWeek, getDay } from 'date-fns';
+// import es from 'date-fns/locale/es';
+// import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
+// import 'react-big-calendar/lib/css/react-big-calendar.css'
+// import DayCalendarComp from './DayCalendarComp';
 
-import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
-import 'react-big-calendar/lib/css/react-big-calendar.css'
+// const App: FC = () => {
+//   const [selectedDate, setSelectedDate] = useState(new Date());
+//   const [showDayCalendar, setShowDayCalendar] = useState(true);
 
-const App: FC = () => {
-  // const [events, setEvents] = useState<Event[]>([
-  //   {
-  //     title: 'Learn cool stuff',
-  //     start,
-  //     end,
-  //   },
-  // ])
+//   const handleDayClick = (date) => {
+//     setSelectedDate(new Date(date));
+//     setShowDayCalendar(true);
+//   };
+  
 
-  // const onEventResize: withDragAndDropProps['onEventResize'] = data => {
-  //   const { start, end } = data
+//   const handleTimeSelection = (hour: number, minute: number) => {
+//     console.log('Año:', selectedDate.getFullYear());
+//     console.log('Mes:', selectedDate.getMonth() + 1); // Se agrega 1 porque los meses son base 0 (enero es 0)
+//     console.log('Día:', selectedDate.getDate());
+//     console.log('Hora:', hour);
+//     console.log('Minutos:', minute);
+//   };
 
-  //   setEvents(currentEvents => {
-  //     const firstEvent = {
-  //       start: new Date(start),
-  //       end: new Date(end),
-  //     }
-  //     return [...currentEvents, firstEvent]
-  //   })
-  // }
+//   return (
+//     <div>
+//       <div>
 
-  // const onEventDrop: withDragAndDropProps['onEventDrop'] = data => {
-  //   console.log(data)
-  // }
+//       <Calendar
+//         // defaultView='month'
+//         selectable={true}
+//         localizer={localizer}
+//         onSelectSlot={handleDayClick}
+//         view='month'
+//         style={{ height: '100%' }}
+//         />
+//         </div>
+        
+//       <div>
+//       {showDayCalendar && (
+//         <DayCalendarComp selectedDate={selectedDate} onTimeSelection={handleTimeSelection} />
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
 
-  return (
-    <Calendar
-      defaultView='day'
-      // events={events}
-      localizer={localizer}
-      // onEventDrop={onEventDrop}
-      // onEventResize={onEventResize}
-      // resizable
-      style={{ height: '50vh' }}
-    />
-  )
-}
+// const locales = {
+//   'es': es,
+// }
 
-const locales = {
-  'es': es,
-}
+// const localizer = dateFnsLocalizer({
+//   format,
+//   parse,
+//   startOfWeek,
+//   getDay,
+//   locales,
+// })
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './_CalendarComp.css';
+// import React, { FC, useState } from 'react';
+// import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
+// import { format, parse, startOfWeek, getDay } from 'date-fns';
+// import es from 'date-fns/locale/es';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css';
+
+// const App: FC = () => {
+//   const [selectedSlotInfo, setSelectedSlotInfo] = useState(null);
+//   const [showDatePicker, setShowDatePicker] = useState(false);
+//   const [selectedDate, setSelectedDate] = useState(new Date());
+
+//   const handleSelectSlot = (slotInfo: any) => {
+//     setSelectedSlotInfo(slotInfo);
+//     setShowDatePicker(true);
+//   };
+
+//   const handleDatePickerChange = (date: Date) => {
+//     setSelectedDate(date);
+//     console.log("Año:", date.getFullYear());
+//     console.log("Mes:", date.getMonth() + 1); // Se agrega 1 porque los meses son base 0 (enero es 0)
+//     console.log("Día:", date.getDate());
+//     console.log("Hora:", date.getHours());
+//     console.log("Minutos:", date.getMinutes());
+//     setShowDatePicker(false);
+//   };
+  
+
+//   return (
+//     <div>
+//       <Calendar
+//         defaultView='day'
+//         localizer={localizer}
+//         onSelectSlot={handleSelectSlot}
+//         views={['month', 'day']}
+//       />
+//       {showDatePicker && (
+//         <div className="date-picker-container">
+//           <DatePicker
+//             selected={selectedDate}
+//             onChange={handleDatePickerChange}
+//             showTimeSelect
+//             timeIntervals={15}
+//             dateFormat="MMMM d, yyyy h:mm aa"
+//           />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// const locales = {
+//   'es': es,
+// }
+
+// const localizer = dateFnsLocalizer({
+//   format,
+//   parse,
+//   startOfWeek,
+//   getDay,
+//   locales,
+// })
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css';
+
+// const DatePickerComponent = () => {
+//   const [selectedDate, setSelectedDate] = useState(new Date());
+
+//   const handleDateChange = (date) => {
+//     setSelectedDate(date);
+//     console.log("Año:", date.getFullYear());
+//     console.log("Mes:", date.getMonth() + 1); // Se agrega 1 porque los meses son base 0 (enero es 0)
+//     console.log("Día:", date.getDate());
+//     console.log("Hora:", date.getHours());
+//     console.log("Minutos:", date.getMinutes());
+//   };
+
+//   return (
+//     <div>
+//       <DatePicker
+//         selected={selectedDate}
+//         onChange={handleDateChange}
+//         showTimeSelect
+//         timeIntervals={15}
+//         dateFormat="MMMM d, yyyy h:mm aa"
+//       />
+//     </div>
+//   );
+// };
+
+// export default DatePickerComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './_CalendarComp.css'
+// import { FC, useState } from 'react'
+// import { Calendar, dateFnsLocalizer } from 'react-big-calendar'
+// import { format, parse, startOfWeek, getDay } from 'date-fns';
+// import es from 'date-fns/locale/es'
+// import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+// const App: FC = () => {
+
+  
+//   return (
+//     <div>
+//       <Calendar
+//         defaultView='day'
+//         localizer={localizer}
+//         views={['month', 'day']}
+//       />
+//     </div>
+//   )
+// }
+
+// const locales = {
+//   'es': es,
+// }
+
+// const localizer = dateFnsLocalizer({
+//   format,
+//   parse,
+//   startOfWeek,
+//   getDay,
+//   locales,
+
+// })
+
+// export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { FC, useState } from 'react'
+// import { Calendar, dateFnsLocalizer, Event } from 'react-big-calendar'
+// import withDragAndDrop, { withDragAndDropProps } from 'react-big-calendar/lib/addons/dragAndDrop'
+// import format from 'date-fns/format'
+// import parse from 'date-fns/parse'
+// import startOfWeek from 'date-fns/startOfWeek'
+// import getDay from 'date-fns/getDay'
+// import enUS from 'date-fns/locale/en-US'
+// import es from 'date-fns/locale/es'
+// import addHours from 'date-fns/addHours'
+// import startOfHour from 'date-fns/startOfHour'
+
+// import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
+// import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+// const App: FC = () => {
+//   const [events, setEvents] = useState<Event[]>([
+//     {
+//       title: 'Learn cool stuff',
+//       start,
+//       end,
+//     },
+//   ])
+
+//   const onEventResize: withDragAndDropProps['onEventResize'] = data => {
+//     const { start, end } = data
+
+//     setEvents(currentEvents => {
+//       const firstEvent = {
+//         start: new Date(start),
+//         end: new Date(end),
+//       }
+//       return [...currentEvents, firstEvent]
+//     })
+//   }
+
+//   const onEventDrop: withDragAndDropProps['onEventDrop'] = data => {
+//     console.log(data)
+//   }
+
+//   return (
+//     <DnDCalendar
+//       defaultView='day'
+//       events={events}
+//       localizer={localizer}
+//       onEventDrop={onEventDrop}
+//       onEventResize={onEventResize}
+//       resizable
+//       style={{ height: '50vh' }}
+//     />
+//   )
+// }
+
+// const locales = {
+//   'es': es,
+// }
 // const endOfHour = (date: Date): Date => {
 //   console.log('date: ', date);
 //   const result = addHours(startOfHour(date), 1);
 //   console.log('result: ', result);
 //   return result
+
 // }
 // const now = new Date()
 // console.log('now: ', now)
 // const start = endOfHour(now)
 // console.log('start :', start)
-// const end = addHours(start, .5)
+// const end = addHours(start, 2)
 // console.log('end: ' , end)
-// The types here are `object`. Strongly consider making them better as removing `locales` caused a fatal error
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-})
-//@ts-ignore
+// // The types here are `object`. Strongly consider making them better as removing `locales` caused a fatal error
+// const localizer = dateFnsLocalizer({
+//   format,
+//   parse,
+//   startOfWeek,
+//   getDay,
+//   locales,
+// })
+// //@ts-ignore
 // const DnDCalendar = withDragAndDrop(Calendar)
 
-export default App
+// export default App
 
 
 
@@ -294,50 +588,50 @@ export default App
 
 
 
-// import React, { useState } from 'react';
-// import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
-// import moment from 'moment';
-// import 'react-big-calendar/lib/css/react-big-calendar.css';
-// import DayCalendarComp from './DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
+import React, { useState } from 'react';
+import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import DayCalendarComp from './DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
 
-// const CalendarComp: React.FC = () => {
-//   const [selectedDate, setSelectedDate] = useState(new Date());
+const CalendarComp: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
-//   // Configuración del localizador de fechas
-//   const localizer = momentLocalizer(moment);
+  // Configuración del localizador de fechas
+  const localizer = momentLocalizer(moment);
 
-//   // Manejar cambio de fecha en la vista de mes
-//   const handleMonthDateChange = (date: Date) => {
-//     setSelectedDate(date);
-//   };
+  // Manejar cambio de fecha en la vista de mes
+  const handleMonthDateChange = (date: Date) => {
+    setSelectedDate(date);
+  };
 
-//   return (
-//     <div>
-//       {/* Vista de mes */}
-//       <Calendar
-//         localizer={localizer}
-//         events={[]} // Aquí debes pasar tus eventos
-//         startAccessor="start"
-//         endAccessor="end"
-//         defaultView={Views.MONTH}
-//         onSelectEvent={(event) => console.log(event)}
-//         onSelectSlot={(slotInfo) => console.log(slotInfo)}
-//         style={{ height: 500 }}
-//         onSelecting={(range) => console.log(range)}
-//         onNavigate={handleMonthDateChange}
-//         selectable  // Asegúrate de incluir el prop selectable con un valor booleano
-//       />
+  return (
+    <div>
+      {/* Vista de mes */}
+      <Calendar
+        localizer={localizer}
+        events={[]} // Aquí debes pasar tus eventos
+        startAccessor="start"
+        endAccessor="end"
+        defaultView={Views.MONTH}
+        onSelectEvent={(event) => console.log(event)}
+        onSelectSlot={(slotInfo) => console.log(slotInfo)}
+        style={{ height: 500 }}
+        onSelecting={(range) => console.log(range)}
+        onNavigate={handleMonthDateChange}
+        selectable  // Asegúrate de incluir el prop selectable con un valor booleano
+      />
 
-//       {/* Vista de día */}
-//       <div>
+      {/* Vista de día */}
+      <div>
 
-//       <DayCalendarComp selectedDate={selectedDate} />
-//       </div>
-//     </div>
-//   );
-// };
+      <DayCalendarComp selectedDate={selectedDate} />
+      </div>
+    </div>
+  );
+};
 
-// export default CalendarComp;
+export default CalendarComp;
 
 
 
