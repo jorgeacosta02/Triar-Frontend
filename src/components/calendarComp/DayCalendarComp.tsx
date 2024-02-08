@@ -83,7 +83,11 @@ const DayCalendarComp: React.FC<DayProps> = ({selectedDate}) => {
     const totalMinutes = startTime + index * 15;
     const hour = Math.floor(totalMinutes / 60);
     const minute = totalMinutes % 60;
-    return `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+    return (`
+      
+      ${hour.toString().padStart(2, '0')}:
+      ${minute.toString().padStart(2, '0')}
+      `);
   });
 
   return (

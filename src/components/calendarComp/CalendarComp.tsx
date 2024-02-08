@@ -7,7 +7,7 @@
 // import 'react-big-calendar/lib/css/react-big-calendar.css'
 // import DayCalendarComp from './DayCalendarComp';
 
-// const App: FC = () => {
+// const CalendarComp : FC = () => {
 //   const [selectedDate, setSelectedDate] = useState(new Date());
 //   const [showDayCalendar, setShowDayCalendar] = useState(true);
 
@@ -41,7 +41,10 @@
         
 //       <div>
 //       {showDayCalendar && (
-//         <DayCalendarComp selectedDate={selectedDate} onTimeSelection={handleTimeSelection} />
+//         <DayCalendarComp
+//           selectedDate={selectedDate}
+//           // onTimeSelection={handleTimeSelection}
+//         />
 //         )}
 //       </div>
 //     </div>
@@ -60,7 +63,7 @@
 //   locales,
 // })
 
-// export default App;
+// export default CalendarComp;
 
 
 
@@ -339,7 +342,7 @@
 //       onEventDrop={onEventDrop}
 //       onEventResize={onEventResize}
 //       resizable
-//       style={{ height: '50vh' }}
+//       style={{ height: '100vh' }}
 //     />
 //   )
 // }
@@ -443,48 +446,13 @@
 
 
 
-// import React, { useState, useEffect } from "react";
-// import { Calendar, DateLocalizer, Views } from "react-big-calendar";
-// import { format, parse, startOfDay,  getDay, Locale, startOfWeek } from "date-fns";
-// import esLocale from "date-fns/locale/es";
-// // import "react-big-calendar/lib/css/react-big-calendar.css";
-// import DayPicker from "react-day-picker";
-// // import "react-day-picker/lib/style.css";
-// import { Locale as DateFnsLocale } from 'date-fns';
-// import { AnyListenerPredicate } from "@reduxjs/toolkit";
+// import React, { useState } from "react";
+// import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
+// import { format, parse, startOfDay,  getDay, startOfWeek } from "date-fns";
+// import es from "date-fns/locale/es";
+// import "react-big-calendar/lib/css/react-big-calendar.css";
+// import DatePicker from 'react-datepicker';
 
-
-
-// const startOfWeekWrapper = (date: Date): Date => startOfWeek(date.getTime()) as Date;
-
-// interface IFormatLong {
-//   date: any;
-//   time: any;
-//   dateTime: any;
-// }
-
-// interface IEsMyLocale {
-//   formatLong: IFormatLong
-// }
-
-
-
-// const date = Object.freeze(new Date()); // Supongamos que esta es la fecha para la que quieres obtener el inicio de la semana
-// const startOfWeekDate: any = startOfWeekWrapper(date);; // Obtenemos el inicio de la semana para la fecha dada
-
-// const esMyLocale: Locale | IEsMyLocale = {
-//   formatLong: {
-//     date : 'MMMM dd, yyyy',
-//     time: 'h:mm a',
-//     dateTime: 'MMMM dd, yyyy h:mm a',
-//   },
-//   options: {
-//     weekStartsOn: 1, // Domingo como primer día de la semana
-//   },
-// };
-
-
-// const locales: Locale | IEsMyLocale[] = [esMyLocale];
 
 // const CalendarComp: React.FC = () => {
 //   const [events, setEvents] = useState([]);
@@ -493,22 +461,8 @@
 //   const [month, setMonth] = useState<number>(new Date().getMonth());
 //   const [days, setDays] = useState<number>(new Date().getDay());
 
-//   useEffect(() => {
-//     setEvents([
-//       {
-//         title: "leraning",
-//         start: new Date(2020, 10, 30),
-//         end: new Date(2020, 10, 30),
-//         allDay: false
-//       },
-//       {
-//         title: "Long Event",
-//         start: new Date(2020, 11, 1),
-//         end: new Date(2020, 11, 1),
-//         allDay: false
-//       }
-//     ]);
-//   }, []);
+//   console.log(selectedDay)
+
 
 //   const handleSelect = (eventItem: any) => {
 //     const title = window.prompt("New Event name");
@@ -525,28 +479,23 @@
 //     setDays(day.getDay());
 //   };
 
-//   interface IDateLocalizer {
-//     format: any;
-//     parse: any;
-//     getDay: any;
-//     locales: any;
+//   const locales = {
+//     'es': es,
 //   }
 
-//   const localizer: DateLocalizer | IDateLocalizer = {
-//     format: (value, formatStr, culture) => format(value, formatStr, { 
-//       locale: esLocale 
-//     }),
-//     parse,
-//     startOfWeek: (date) => startOfWeekDate(date, { weekStartsOn: 1 }),
-//     getDay,
-//     locales,
-//   };
+//   const localizer = dateFnsLocalizer({
+//       format,
+//       parse,
+//       startOfWeek,
+//       getDay,
+//       locales,
+//   })
 
 //   return (
 //     <div className="py-3 d-flex">
-//       {/* <div className="flex-sm-column">
-//         <DayPicker selectedDays={selectedDay} onDayClick={handleDayClick} />
-//       </div> */}
+//       <div className="flex-sm-column">
+//         <DatePicker selectedDays={selectedDay} onDayClick={handleDayClick} />
+//       </div>
 //       <div className="flex-sm-column">
 //         <Calendar
 //           selectable
@@ -584,54 +533,163 @@
 
 
 
+import React, { useState } from "react";
+import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
+import { format, parse, startOfDay, getDay, startOfWeek } from "date-fns";
+import es from "date-fns/locale/es";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import DatePicker from 'react-datepicker';
 
-
-
-
-import React, { useState } from 'react';
-import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import DayCalendarComp from './DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
+interface TimeObject {
+  year: number;
+  month: number;
+  day: number;
+  hour: number;
+  minutes: number;
+}
 
 const CalendarComp: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [events, setEvents] = useState<any[]>([]);
+  const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [month, setMonth] = useState<number>(new Date().getMonth());
+  const [days, setDays] = useState<number>(new Date().getDay());
 
-  // Configuración del localizador de fechas
-  const localizer = momentLocalizer(moment);
+  const handleSelect = (slotInfo: any) => {
+    const start: Date = slotInfo.start;
 
-  // Manejar cambio de fecha en la vista de mes
-  const handleMonthDateChange = (date: Date) => {
-    setSelectedDate(date);
+    // Obtener los datos de fecha y hora del inicio seleccionado
+    const selectedStart: TimeObject = {
+      year: start.getFullYear(),
+      month: start.getMonth(),
+      day: start.getDate(),
+      hour: start.getHours(),
+      minutes: start.getMinutes(),
+    };
+
+    console.log('selectedStart: ', selectedStart)
+
+    // Almacenar el evento en el estado de eventos
+    const title = "New Event"; // Puedes cambiar el título según lo desees
+    const data = { title: title, start: selectedStart };
+    setEvents([...events, data]);
   };
 
+  const handleDayClick = (day: Date) => {
+    setSelectedDay(day);
+    setYear(day.getFullYear());
+    setMonth(day.getMonth());
+    setDays(day.getDay());
+  };
+
+  const locales = {
+    'es': es,
+  }
+
+  const localizer = dateFnsLocalizer({
+      format,
+      parse,
+      startOfWeek,
+      getDay,
+      locales,
+  })
+
   return (
-    <div>
-      {/* Vista de mes */}
-      <Calendar
-        localizer={localizer}
-        events={[]} // Aquí debes pasar tus eventos
-        startAccessor="start"
-        endAccessor="end"
-        defaultView={Views.MONTH}
-        onSelectEvent={(event) => console.log(event)}
-        onSelectSlot={(slotInfo) => console.log(slotInfo)}
-        style={{ height: 500 }}
-        onSelecting={(range) => console.log(range)}
-        onNavigate={handleMonthDateChange}
-        selectable  // Asegúrate de incluir el prop selectable con un valor booleano
-      />
-
-      {/* Vista de día */}
-      <div>
-
-      <DayCalendarComp selectedDate={selectedDate} />
+    <div className="py-3 d-flex">
+      <div className="flex-sm-column">
+        <DatePicker selected={selectedDay} onChange={(date: Date) => handleDayClick(date)} />
+      </div>
+      <div className="flex-sm-column">
+        <Calendar
+          selectable
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          onSelectSlot={handleSelect}
+          onSelectEvent={(event) => alert(event.title)}
+          defaultView={Views.DAY}
+          defaultDate={startOfDay(new Date(year, month, days))}
+          min={new Date(year, month, days)}
+          max={new Date(year, month, days, 23, 59)} // Limitar selección a un día
+          style={{ height: 500 }}
+        />
       </div>
     </div>
   );
 };
 
 export default CalendarComp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
+// import moment from 'moment';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import DayCalendarComp from './DayCalendarComp'; // Suponiendo que tienes un componente Day en un archivo separado
+
+// const CalendarComp: React.FC = () => {
+//   const [selectedDate, setSelectedDate] = useState(new Date());
+
+//   // Configuración del localizador de fechas
+//   const localizer = momentLocalizer(moment);
+
+//   // Manejar cambio de fecha en la vista de mes
+//   const handleMonthDateChange = (date: Date) => {
+//     setSelectedDate(date);
+//   };
+
+//   return (
+//     <div>
+//       {/* Vista de mes */}
+//       <Calendar
+//         localizer={localizer}
+//         events={[]} // Aquí debes pasar tus eventos
+//         startAccessor="start"
+//         endAccessor="end"
+//         defaultView={Views.MONTH}
+//         onSelectEvent={(event) => console.log(event)}
+//         onSelectSlot={(slotInfo) => console.log(slotInfo)}
+//         style={{ height: 500 }}
+//         onSelecting={(range) => console.log(range)}
+//         onNavigate={handleMonthDateChange}
+//         selectable  // Asegúrate de incluir el prop selectable con un valor booleano
+//       />
+
+//       {/* Vista de día */}
+//       <div>
+
+//       <DayCalendarComp selectedDate={selectedDate} />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CalendarComp;
 
 
 
