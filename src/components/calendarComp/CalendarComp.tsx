@@ -533,6 +533,114 @@
 
 
 
+// import React, { useState } from "react";
+// import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
+// import { format, parse, startOfDay, getDay, startOfWeek } from "date-fns";
+// import es from "date-fns/locale/es";
+// import "react-big-calendar/lib/css/react-big-calendar.css";
+// import DatePicker from 'react-datepicker';
+
+// interface TimeObject {
+//   year: number;
+//   month: number;
+//   day: number;
+//   hour: number;
+//   minutes: number;
+// }
+
+// const CalendarComp: React.FC = () => {
+//   const [events, setEvents] = useState<any[]>([]);
+//   const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+//   const [year, setYear] = useState<number>(new Date().getFullYear());
+//   const [month, setMonth] = useState<number>(new Date().getMonth());
+//   const [days, setDays] = useState<number>(new Date().getDay());
+
+//   const handleSelect = (slotInfo: any) => {
+//     const start: Date = slotInfo.start;
+
+//     // Obtener los datos de fecha y hora del inicio seleccionado
+//     const selectedStart: TimeObject = {
+//       year: start.getFullYear(),
+//       month: start.getMonth(),
+//       day: start.getDate(),
+//       hour: start.getHours(),
+//       minutes: start.getMinutes(),
+//     };
+
+//     console.log('selectedStart: ', selectedStart)
+
+//     // Almacenar el evento en el estado de eventos
+//     const title = "New Event"; // Puedes cambiar el título según lo desees
+//     const data = { title: title, start: selectedStart };
+//     setEvents([...events, data]);
+//   };
+
+//   const handleDayClick = (day: Date) => {
+//     setSelectedDay(day);
+//     setYear(day.getFullYear());
+//     setMonth(day.getMonth());
+//     setDays(day.getDay());
+//   };
+
+//   const locales = {
+//     'es': es,
+//   }
+
+//   const localizer = dateFnsLocalizer({
+//       format,
+//       parse,
+//       startOfWeek,
+//       getDay,
+//       locales,
+//   })
+
+//   return (
+//     <div className="py-3 d-flex">
+//       <div className="flex-sm-column">
+//         <DatePicker selected={selectedDay} onChange={(date: Date) => handleDayClick(date)} />
+//       </div>
+//       <div className="flex-sm-column">
+//         <Calendar
+//           selectable
+//           localizer={localizer}
+//           events={events}
+//           startAccessor="start"
+//           endAccessor="end"
+//           onSelectSlot={handleSelect}
+//           onSelectEvent={(event) => alert(event.title)}
+//           defaultView={Views.DAY}
+//           defaultDate={startOfDay(new Date(year, month, days))}
+//           min={new Date(year, month, days)}
+//           max={new Date(year, month, days, 23, 59)} // Limitar selección a un día
+//           style={{ height: 500 }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CalendarComp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
 import { format, parse, startOfDay, getDay, startOfWeek } from "date-fns";
@@ -549,6 +657,7 @@ interface TimeObject {
 }
 
 const CalendarComp: React.FC = () => {
+
   const [events, setEvents] = useState<any[]>([]);
   const [selectedDay, setSelectedDay] = useState<Date>(new Date());
   const [year, setYear] = useState<number>(new Date().getFullYear());
@@ -610,9 +719,16 @@ const CalendarComp: React.FC = () => {
           onSelectEvent={(event) => alert(event.title)}
           defaultView={Views.DAY}
           defaultDate={startOfDay(new Date(year, month, days))}
-          min={new Date(year, month, days)}
-          max={new Date(year, month, days, 23, 59)} // Limitar selección a un día
+          // min={new Date(year, month, days)}
+          // max={new Date(year, month, days, 23, 59)} // Limitar selección a un día
           style={{ height: 500 }}
+          timeslots={60 / 15} // Permitir selección cada 15 minutos (60 minutos / 15 minutos)
+          step={15} // Pasos de 15 minutos
+          formats={{ timeGutterFormat: 'hh:mm ' }} // Formato de la hora en el margen de tiempo
+          min={new Date(year, month, days, 8, 0)} // Hora de inicio de la jornada
+          max={new Date(year, month, days, 20, 0)} // Hora de fin de la jornada
+          scrollToTime={new Date(year, month, days, 8, 0)} // Desplazarse a la hora de inicio de la jornada por defecto
+          dayLayoutAlgorithm="no-overlap" // Evitar superposición de eventos en el mismo día
         />
       </div>
     </div>
@@ -630,6 +746,201 @@ export default CalendarComp;
 
 
 
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
+// import { startOfDay, addMinutes } from "date-fns";
+// import es from "date-fns/locale/es";
+// import "react-big-calendar/lib/css/react-big-calendar.css";
+// import DatePicker from 'react-datepicker';
+
+// interface EventData {
+//   start: Date;
+//   end: Date;
+//   title: string;
+// }
+
+// const generateEvents = (day: Date) => {
+//   const events: EventData[] = [];
+//   const startOfDayTime = startOfDay(day);
+//   let startTime = startOfDayTime;
+
+//   // Generar eventos para cada intervalo de 15 minutos en un día
+//   while (startTime < addMinutes(startOfDayTime, 24 * 60)) {
+//     const endTime = addMinutes(startTime, 15);
+//     events.push({
+//       start: startTime,
+//       end: endTime,
+//       title: "Evento",
+//     });
+//     startTime = endTime;
+//   }
+
+//   return events;
+// };
+
+// const CalendarComp: React.FC = () => {
+//   const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+
+//   const handleDayClick = (day: Date) => {
+//     setSelectedDay(day);
+//   };
+
+//   const locales = {
+//     'es': es,
+//   }
+
+//   const localizer = dateFnsLocalizer({
+//       locales,
+//   })
+
+//   return (
+//     <div className="py-3 d-flex">
+//       <div className="flex-sm-column">
+//         <DatePicker selected={selectedDay} onChange={(date: Date) => handleDayClick(date)} />
+//       </div>
+//       <div className="flex-sm-column">
+//         <Calendar
+//           selectable
+//           localizer={localizer}
+//           events={generateEvents(selectedDay)}
+//           startAccessor="start"
+//           endAccessor="end"
+//           onSelectEvent={(event) => alert(event.title)}
+//           defaultView={Views.DAY}
+//           defaultDate={selectedDay}
+//           style={{ height: 500 }}
+//           timeslots={4} // Permitir selección cada 15 minutos (60 minutos / 15 minutos = 4)
+//           step={15} // Pasos de 15 minutos
+//           formats={{ timeGutterFormat: 'hh:mm ' }} // Formato de la hora en el margen de tiempo
+//           scrollToTime={selectedDay}
+//           dayLayoutAlgorithm="no-overlap" // Evitar superposición de eventos en el mismo día
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CalendarComp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { Calendar, Views, dateFnsLocalizer } from "react-big-calendar";
+// import { startOfDay, addMinutes } from "date-fns";
+// import es from "date-fns/locale/es";
+// import "react-big-calendar/lib/css/react-big-calendar.css";
+// import DatePicker from 'react-datepicker';
+
+// interface TimeObject {
+//   year: number;
+//   month: number;
+//   day: number;
+//   hour: number;
+//   minutes: number;
+// }
+
+// const CalendarComp: React.FC = () => {
+//   const [selectedTime, setSelectedTime] = useState<Date | null>(null);
+//   const [selectedDay, setSelectedDay] = useState<Date>(new Date());
+//   const [year, setYear] = useState<number>(new Date().getFullYear());
+//   const [month, setMonth] = useState<number>(new Date().getMonth());
+//   const [days, setDays] = useState<number>(new Date().getDay());
+
+//   const handleSelect = (slotInfo: any) => {
+//     const selectedTime = slotInfo.start;
+
+//     // Actualizar el estado con la hora seleccionada
+//     setSelectedTime(selectedTime);
+
+//     // Obtener los datos de fecha y hora del inicio seleccionado
+//     const selectedStart: TimeObject = {
+//       year: selectedTime.getFullYear(),
+//       month: selectedTime.getMonth(),
+//       day: selectedTime.getDate(),
+//       hour: selectedTime.getHours(),
+//       minutes: selectedTime.getMinutes(),
+//     };
+
+//     console.log('selectedStart: ', selectedStart)
+//   };
+
+//   const handleDayClick = (day: Date) => {
+//     setSelectedDay(day);
+//     setYear(day.getFullYear());
+//     setMonth(day.getMonth());
+//     setDays(day.getDay());
+
+//     // Al hacer clic en un día, deseleccionar la hora seleccionada
+//     setSelectedTime(null);
+//   };
+
+//   const locales = {
+//     'es': es,
+//   }
+
+//   const localizer = dateFnsLocalizer({
+//       locales,
+//   })
+
+//   return (
+//     <div className="py-3 d-flex">
+//       <div className="flex-sm-column">
+//         <DatePicker selected={selectedDay} onChange={(date: Date) => handleDayClick(date)} />
+//       </div>
+//       <div className="flex-sm-column">
+//         <Calendar
+//           selectable
+//           localizer={localizer}
+//           startAccessor="start"
+//           endAccessor="end"
+//           onSelectSlot={handleSelect}
+//           defaultView={Views.DAY}
+//           defaultDate={startOfDay(new Date(year, month, days))}
+//           min={new Date(year, month, days)}
+//           max={new Date(year, month, days, 23, 59)} // Limitar selección a un día
+//           style={{ height: 500 }}
+//           timeslots={4} // Permitir selección cada 15 minutos (60 minutos / 15 minutos = 4)
+//           step={15} // Pasos de 15 minutos
+//           scrollToTime={selectedTime || new Date(year, month, days, 0, 0)} // Desplazarse a la hora seleccionada o al inicio del día
+//           dayLayoutAlgorithm="no-overlap" // Evitar superposición de eventos en el mismo día
+//         />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CalendarComp;
 
 
 
