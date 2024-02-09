@@ -2,6 +2,7 @@
 
 // Musetra en blanco sólo los días seleccionados y responde con valores sólo de los días seleccionados.
 
+import { useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
@@ -41,7 +42,7 @@ const CalendarComp = () => {
     return selectedDays.includes(getDay(date));
   };
 
-  let selectedDate:ISelectedDate;
+  const [selectedDate, setSelectedDate] = useState<ISelectedDate> ();
 
   const handleSelectSlot = slotInfo => {
     // Extraer año, mes, día de la semana y valor correspondiente
@@ -52,17 +53,18 @@ const CalendarComp = () => {
     const value = getDay(slotInfo.start);
 
     if(selectedDays.includes(value))  {
-      selectedDate = {
+      setSelectedDate({
         year,
         month,
         dayOfWeek,
         day,
-      }
-      console.log(selectedDate);
+      })
       return (selectedDate);
     }
   };
-
+  
+  console.log(selectedDate);
+  
   return (
     <div className={styles.container}>
       <Calendar
