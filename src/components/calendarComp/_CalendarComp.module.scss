@@ -1,0 +1,7 @@
+@use '../../styles/globals' as g;
+
+.container{
+    padding: g.$mobile-main-container-padding;
+    @include g.create-flexbox(row, space-between);
+    align-items: flex-start;
+}

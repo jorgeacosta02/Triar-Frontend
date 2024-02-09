@@ -1,16 +1,17 @@
 
 
-// Musetra en blanco sólo los días seleccionados.
+// Musetra en blanco sólo los días seleccionados y responde con valores sólo de los días seleccionados.
 
-import React from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import es from 'date-fns/locale/es';
+import DayCalendarComp from './DayCalendarComp';
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import styles from './_CalendarComp.module.scss'
 
 const locales = {
   'es': es,
@@ -24,6 +25,13 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+export interface ISelectedDate {
+  year:string,
+  month:string,
+  dayOfWeek:string,
+  day:string,
+}
+
 const CalendarComp = () => {
 
   const selectedDays = [2,4];
@@ -33,6 +41,8 @@ const CalendarComp = () => {
     return selectedDays.includes(getDay(date));
   };
 
+  let selectedDate:ISelectedDate;
+
   const handleSelectSlot = slotInfo => {
     // Extraer año, mes, día de la semana y valor correspondiente
     const year = slotInfo.start.getFullYear();
@@ -40,16 +50,29 @@ const CalendarComp = () => {
     const day = slotInfo.start.getDate();
     const dayOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'][slotInfo.start.getDay()]; // Obtenemos el nombre del día de la semana
     const value = getDay(slotInfo.start);
-    if(selectedDays.includes(value))  console.log(`Fecha seleccionada: ${year}-${month}-${day}, ${dayOfWeek} (${value})`);
+
+    if(selectedDays.includes(value))  {
+      selectedDate = {
+        year,
+        month,
+        dayOfWeek,
+        day,
+      }
+      console.log(selectedDate);
+      return (selectedDate);
+    }
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <Calendar
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{
+          height: 500,
+          width: '50vw'
+        }}
         views={['month']}
         selectable={true}
         dayPropGetter={(date) => {
@@ -60,12 +83,14 @@ const CalendarComp = () => {
                 pointerEvents: 'none',
                 backgroundColor: 'black',
                 color: '#999',
+                
               },
             };
           }
         }}
         onSelectSlot={handleSelectSlot}
       />
+        <DayCalendarComp selectedDate={selectedDate} />
     </div>
   );
 };
