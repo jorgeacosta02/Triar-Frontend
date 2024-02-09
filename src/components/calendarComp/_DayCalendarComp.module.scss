@@ -1,0 +1,17 @@
+@use '../../styles/globals' as g;
+
+.container{
+    padding: 0 3vw;
+    background-color: g.$grey-color;
+    @include g.create-flexbox(column, center);
+    .slot{
+        list-style-type: none;
+        border: 1px solid black;
+        text-align: center;
+        padding: 2px 4px;
+    }
+    .slot:hover{
+        cursor: pointer;
+        background-color: g.$main-color;
+    }
+}

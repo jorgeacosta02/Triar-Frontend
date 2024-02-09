@@ -69,17 +69,16 @@
 
 import React, {useState} from 'react';
 import { ISelectedDate } from './CalendarComp';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import styles from './_DayCalendarComp.module.scss'
+
 
 interface IDayProps {
   selectedDate: ISelectedDate;
 }
 
-// interface ISelectedCompleteDate<ISelectedDate> {
-//   hour:string,
-//   minute:string
-// }
-
+const definedStartTime = 8;
+const definedEndTime = 20;
+const definedTimeSlot = 15;
 
 const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   
@@ -87,11 +86,11 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   console.log('selectedDate: ', selectedDate)
 
   // Genera un arreglo de horas y minutos del día seleccionado
-  const startTime = 8 * 60; // 8 am en minutos
-  const endTime = 20 * 60; // 8 pm en minutos
+  const startTime = definedStartTime * 60; // 8 am en minutos
+  const endTime = definedEndTime * 60; // 8 pm en minutos
 
   const timeSlots = Array.from({ length: (endTime - startTime) / 15 }, (_, index) => {
-    const totalMinutes = startTime + index * 15;
+    const totalMinutes = startTime + index * definedTimeSlot;
     const hour = (Math.floor(totalMinutes / 60)).toString().padStart(2, '0');
     const minute = (totalMinutes % 60).toString().padStart(2, '0');
 
@@ -100,32 +99,28 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
 
 
   const handleSlotClick = (selectedTimeSlot: string) => {
+
     console.log('Intervalo de tiempo seleccionado: ', selectedTimeSlot);
-    // Aquí puedes hacer lo que necesites con el intervalo de tiempo seleccionado
-    
-    // const handleSlotClick = (selectedDate) => {
-      
-      //   console.log('selectedDate in handleSlotClick: ', selectedDate)
-      
-      if(selectedDate)
-        setSelectedCompleteDate ({
-          year:selectedDate.year,
-          month:selectedDate.month,
-          dayOfWeek:selectedDate.dayOfWeek,
-          day:selectedDate.day,
-          hour:selectedTimeSlot
-        }
-      )
+
+    if(selectedDate)
+      setSelectedCompleteDate ({
+        year:selectedDate.year,
+        month:selectedDate.month,
+        dayOfWeek:selectedDate.dayOfWeek,
+        day:selectedDate.day,
+        hour:selectedTimeSlot
+      })
   }
 
   console.log('selectedCompleteDate: ', selectedCompleteDate)
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>Calendario</h2>
       <ul>
         {timeSlots.map(slot => (
           <li
+            className={styles.slot}
             key={slot}
             onClick={() => handleSlotClick(slot)}
           >

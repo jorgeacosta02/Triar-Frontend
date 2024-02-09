@@ -64,7 +64,7 @@ const CalendarComp = () => {
   };
   
   console.log(selectedDate);
-  
+
   return (
     <div className={styles.container}>
       <Calendar
@@ -72,20 +72,17 @@ const CalendarComp = () => {
         startAccessor="start"
         endAccessor="end"
         style={{
-          height: 500,
-          width: '50vw'
+          height: 300,
+          width: '50vw',
         }}
         views={['month']}
         selectable={true}
         dayPropGetter={(date) => {
           if (!filterDate(date)) {
             return {
-              className: 'react-big-calendar-disabled-date',
               style: {
                 pointerEvents: 'none',
                 backgroundColor: 'black',
-                color: '#999',
-                
               },
             };
           }
