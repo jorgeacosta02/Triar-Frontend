@@ -1,4 +1,4 @@
-import styles from '../loginComp/_UserLoginComp.module.scss';
+import styles from '../userLoginComp/_UserLoginComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userRegisterSchema } from '../../validations/zodUserSchemas';
