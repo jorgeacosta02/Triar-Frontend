@@ -1,19 +1,13 @@
 import styles from './_LogoComp.module.scss';
-import ESLogoImg from '../../Assets/Images/Logos&Brands/ExploserviceLogoBrand.png';
-import ADLLogo from '../../Assets/Images/Logos&Brands/ADLLogo.png';
+import TriarLogo from '../../assets/Images/Logos&Brands/logo fondo transparente.png'
 
 const LogoComp = () => {
   return (
     <div className={styles.container}>
       <img
-        src={ESLogoImg}
+        src={TriarLogo}
         alt="Exploservice Logo"
-        className={styles.ESLogoImg}  
-      />
-      <img
-        src={ADLLogo}
-        alt="ADL Logo"
-        className={styles.ADLLogo}  
+        className={styles.triarLogo}  
       />
     </div>
   )

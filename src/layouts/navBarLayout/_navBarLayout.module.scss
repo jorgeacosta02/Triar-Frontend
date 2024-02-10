@@ -10,7 +10,7 @@
     left: 0;
     padding: 0 2vw;
     margin: 0;
-    background-color: g.$main-light-color;
+    background-color: g.$main-light2-color;
     @include g.create-flexbox(row, space-between);
     z-index: 1000;
     border-bottom: 10px solid g.$main-color;

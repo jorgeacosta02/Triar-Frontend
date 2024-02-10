@@ -92,9 +92,9 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   const endTime1 = (definedEndHour1 * 60) + definedEndMinutes1
 
   //define los horaros del segundo rango de turnos
-  const definedStartHour2 = 9
-  const definedStartMinutes2 = 50
-  const definedEndHour2 = 13;
+  const definedStartHour2 = 16
+  const definedStartMinutes2 = 0
+  const definedEndHour2 = 20;
   const definedEndMinutes2 = 40
   const definedTimeSlot2 = 20
   const startTime2 = (+definedStartHour2 * 60) + definedStartMinutes2
@@ -115,13 +115,22 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   // Se crean los dos rangos de turno
   const timeSlots1 = calcSlotsGroup(startTime1, endTime1, definedTimeSlot1)
   const timeSlots2 = calcSlotsGroup(startTime2, endTime2, definedTimeSlot2)
-    
-  const startLastSlotOfFirtsGroup = timeSlots1[timeSlots1.length-1]
-  const [hourString, minuteString] = startLastSlotOfFirtsGroup.split(":");
-  const endFirstGroup = (+parseInt(hourString) * 60) + parseInt(minuteString) + definedTimeSlot1;
-  console.log('hourString: ', hourString)
-  console.log('minuteString: ', minuteString)
-  console.log(endFirstGroup)
+  
+  // Determina los minutos finales del rango de trunos 
+  const endOfGroup = (timeGroup, definedTimeSlot) => {
+
+    const startLastSlotOfGroup = timeGroup[timeGroup.length-1]
+    const [hourString, minuteString] = startLastSlotOfGroup.split(":");
+    const endGroupMinutes = (+parseInt(hourString) * 60) + parseInt(minuteString) + definedTimeSlot;
+    console.log('hourString: ', hourString)
+    console.log('minuteString: ', minuteString)
+    console.log(endGroupMinutes)
+
+    return endGroupMinutes
+  }
+
+ const endOfGroup1 = endOfGroup(timeSlots1, definedTimeSlot1)
+ const endOfGroup2 = endOfGroup(timeSlots2, definedTimeSlot2)
 
 
   // Construir una nueva fecha con la misma fecha que la actual pero con las horas y minutos dados
@@ -172,6 +181,14 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   // const endLastSlotOfFirtsGroup = addSlotToTime(startLastSlotOfFirtsGroup)
 
   let isSecondStart = false;
+
+  // Verivica las condiciones para mostrar el segundo rango de turnos
+  // que el inicio del segundo no sea menor que el fin del primero
+  // if(endOfGroup2 && endOfGroup1 && startTime2 < endOfGroup1) return alert('El segundo bloque de turnos no puede iniciar antes del fin del primero.')
+  // // que la hora final del segundo rango de turnos no sea mayor a las 24:00
+  // if(endOfGroup2 && endOfGroup1 && endOfGroup2 > (24*60)) return alert('Los turnos no pueden finalizar después de la hora 24:00.')
+
+  isSecondStart = true
   
   const handleSlotClick = (selectedTimeSlot: string) => {
 
