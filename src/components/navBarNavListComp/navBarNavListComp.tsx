@@ -51,9 +51,9 @@ const NavBarNavListComp = () => {
         <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
-            to="/services" 
+            to="/appointment" 
             className={styles.navLink} 
-           >Servicios</NavLink>
+           >Turnos online</NavLink>
         </li>
         <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
@@ -86,28 +86,32 @@ const NavBarNavListComp = () => {
 
 
         {accessLogin?.user?.id || userAuthId?.data?.user?.id
-        ? <li>
-            <NavLink to='/profile'>
-              <p
-                className={styles.capital}
+        ? <div className={styles.profileContainer}>
+            <li>
+              <NavLink
+                to='/profile'
+                className={styles.profile}
               >
-                {/* {accessLogin.user.firstName.charAt(0).toUpperCase()} */}
                 Mi perfil
-              </p>
-            </NavLink>
-          </li>
+              </NavLink>
+            </li>
+          </div>
           : <div  className={styles.loginLinks}>
               <li onClick={handleClick} >
                 <NavLink
                   to="/login" 
                   className={styles.logLink} 
-                >Ingresar</NavLink>
+                >
+                  Ingresar
+                </NavLink>
               </li>
               <li onClick={handleClick} >
                 <NavLink
                   to="/register" 
                   className={styles.logLink} 
-                  >Registrarse</NavLink>
+                  >
+                    Registrarse
+                  </NavLink>
               </li>
             </div>
           }

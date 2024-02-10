@@ -64,7 +64,7 @@
     .loginLinks{
         @include g.display-large{
             @include g.create-flexbox(row, space-evenly);
-            background-color: g.$main-color;
+            background-color: g.$main-dark-color;
             border-radius: 50% / 180%;
             height: 80%;
             width: 28%;
@@ -95,7 +95,46 @@
             transition: .2s ease;
             @include g.display-large{
                 background-color: transparent;
-                color: g.$main-dark-color;
+                color: g.$main-light-color;
+                transform:scale(1.1);
+            }
+        }
+    }
+    .profileContainer{
+        @include g.display-large{
+            @include g.create-flexbox(row, space-evenly);
+            background-color: g.$main-dark-color;
+            border-radius: 50% / 50%;
+            height: 80%;
+            width: 70px;
+            margin-left: 2vw;
+        }
+        .profile{// li
+            box-sizing: border-box;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            width: 70vw;
+            height: 8vh;
+            line-height: 8vh;
+            border-radius: 2vw;
+            color: g.$dark-black-color;
+            @include g.display-large{
+                width: 100%;
+                border-radius: .5vw;
+                color: g.$white-color;
+                font-weight: 400;
+                font-size: calc(g.$desk-p-font-size * .9);
+            }
+        }
+        .profile:hover{
+            background-color: g.$main-color;
+            color:g.$dark-black-color;
+            transition: .2s ease;
+            @include g.display-large{
+                background-color: transparent;
+                color: g.$main-light-color;
                 transform:scale(1.1);
             }
         }

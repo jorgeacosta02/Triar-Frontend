@@ -129,57 +129,11 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
     return endGroupMinutes
   }
 
- const endOfGroup1 = endOfGroup(timeSlots1, definedTimeSlot1)
- const endOfGroup2 = endOfGroup(timeSlots2, definedTimeSlot2)
+  // Se calculan los fines de grupo en minutos
+  const endOfGroup1 = endOfGroup(timeSlots1, definedTimeSlot1)
+  const endOfGroup2 = endOfGroup(timeSlots2, definedTimeSlot2)
 
-
-  // Construir una nueva fecha con la misma fecha que la actual pero con las horas y minutos dados
-  // const dateConverter = (timeString) => {
-  //   const [hourString, minuteString] = timeString.split(":");
-  //   const hour = parseInt(hourString, 10);
-  //   const minute = parseInt(minuteString, 10);
-    
-  //   // Obtener la fecha actual
-  //   const currentDate = new Date();
-
-  //   const date = new Date(
-  //     currentDate.getFullYear(),    // Año actual
-  //     currentDate.getMonth(),       // Mes actual
-  //     currentDate.getDate(),        // Día actual
-  //     hour,                        // Horas
-  //     minute,                      // Minutos
-  //     0,                           // Segundos (0)
-  //     0                            // Milisegundos (0)
-  //   );
-      
-  //   return date;
-  // }
-
-  // const startLastSlotOfFirtsGroup = dateConverter(timeSlots1[timeSlots1.length-1])
-  // console.log('startLastSlotOfFirtsGroup: ', startLastSlotOfFirtsGroup)
-
-  // const addSlotToTime = (date) => {
-
-  //   const currentMinutes = date.getMinutes(); // Obtener los minutos actuales
-  //   const newMinutes = currentMinutes + 20; // Sumar 20 minutos
-
-  //   // Si la suma de minutos excede 59, ajustar las horas y los minutos
-  //   if (newMinutes > 59) {
-  //       const currentHours = date.getHours(); // Obtener las horas actuales
-  //       const newHours = currentHours + Math.floor(newMinutes / 60); // Sumar horas
-  //       const adjustedMinutes = newMinutes % 60; // Calcular los minutos ajustados
-
-  //       date.setHours(newHours); // Establecer las nuevas horas
-  //       date.setMinutes(adjustedMinutes); // Establecer los nuevos minutos
-  //     } else {
-  //       date.setMinutes(newMinutes); // Establecer solo los nuevos minutos si no hay cambio de hora
-  //     }
-  //     console.log(date); // Imprimir el resultado
-  //     return date
-  // }
-
-  // const endLastSlotOfFirtsGroup = addSlotToTime(startLastSlotOfFirtsGroup)
-
+  // constante para validar la renderización del segudno grupo
   let isSecondStart = false;
 
   // Verivica las condiciones para mostrar el segundo rango de turnos
@@ -210,7 +164,7 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
 
   return (
     <div className={styles.container}>
-      <h2>Calendario</h2>
+      <h2>Horarios:</h2>
       <ul>
         {timeSlots1.map(slot => (
           <li

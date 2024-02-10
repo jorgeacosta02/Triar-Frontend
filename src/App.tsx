@@ -19,30 +19,32 @@ const App = () => {
     <div>
       <Routes>
 
-        {/*General Routes*/}
-        <Route path="/appointment" element={<CalendarPage />} />
+        {/*Free Routes*/}
         <Route path="/" element={<HomePage />} />
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-
-        {/*Protected Routes*/}
-       <Route element={<EmployeesRoutesComp/>}>
-        <Route path='/tasks' element={<TasksPage/>}/>
-        <Route path='/task/:id' element={<TaskByIdPage/>}/>
-        <Route path='/profile' element={<ProfilePage/>}/>
-       </Route>
-       <Route element={<AdminRoutesComp/>}>
-        <Route path='/add-task' element={<AddTaskPage/>}/>
-
-       </Route>
-  
-
-        {/*Exploservice Routes*/}
+        <Route path="/appointment" element={<CalendarPage />} />
+        <Route path='/user-register' element={<RegisterPage/>}/>
+        <Route path='/user-login' element={<LoginPage/>}/>
         <Route path="/company" element={<CompanyPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/equipment" element={<EquipmentPage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+
+        {/*Protected Routes*/}
+        {/* Employees Routes*/}
+       <Route element={<EmployeesRoutesComp/>}>
+        <Route path='/tasks' element={<TasksPage/>}/>
+        <Route path='/task/:id' element={<TaskByIdPage/>}/>
+        <Route path='/profile' element={<ProfilePage/>}/>
+       </Route>
+
+       {/* Admin Routes */}
+       <Route element={<AdminRoutesComp/>}>
+        <Route path='/add-task' element={<AddTaskPage/>}/>
+       </Route>
+  
+
+
       </Routes>
     </div>
   )

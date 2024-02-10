@@ -13,7 +13,7 @@
     background-color: g.$main-light2-color;
     @include g.create-flexbox(row, space-between);
     z-index: 1000;
-    border-bottom: 10px solid g.$main-color;
+    border-bottom: 10px solid g.$main-dark-color;
     @include g.display-large{
         height: g.$desk-NavBar-height;
     }
