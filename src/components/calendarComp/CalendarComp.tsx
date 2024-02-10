@@ -82,7 +82,7 @@ const CalendarComp = () => {
             return {
               style: {
                 pointerEvents: 'none',
-                backgroundColor: 'black',
+                backgroundColor: 'grey',
               },
             };
           }
