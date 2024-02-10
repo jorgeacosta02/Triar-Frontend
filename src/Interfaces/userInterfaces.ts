@@ -27,7 +27,7 @@ export interface IUserDataFromDB {
 }
 
 // Interface for register user
-export interface IRegisterData {
+export interface IUserRegisterData {
     firstName: string;
     lastName: string;
     dni: string;
@@ -38,7 +38,7 @@ export interface IRegisterData {
 }
 
 // LOGIN
-export interface ILoginData {
+export interface IUserLoginData {
     dni: string;
     password: string;
   }

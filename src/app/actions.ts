@@ -6,7 +6,7 @@ import { IUserDataFromDB } from '../Interfaces/userInterfaces';
 export const loginUser: any = createAsyncThunk('user/loginUser', async (credentials: { dni: number; password: string }) => {
 
   try {
-    const response = await axios.post<IUserDataFromDB, any>('/login', credentials);
+    const response = await axios.post<IUserDataFromDB, any>('/user-login', credentials);
     console.log('response.data en loginUser: ', response.data);
     const data = response.data;
     localStorage.setItem('accessLogin', JSON.stringify(data));

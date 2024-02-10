@@ -1,16 +1,16 @@
-import styles from './_LoginComp.module.scss'
+import styles from './_UserLoginComp.module.scss'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { loginSchema } from '../../validations/zodSchemas';
+import { userLoginSchema } from '../../validations/zodUserSchemas';
 import { Link } from 'react-router-dom';
-import { ILoginData } from '../../Interfaces/userInterfaces';
+import { IUserLoginData } from '../../Interfaces/userInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuth } from '../../features/userAuth/userAuthSlice';
 import { loginUser } from '../../app/actions';
 import { useNavigate } from 'react-router-dom';
 
 
-const LoginComp = () => {
+const UserLoginComp = () => {
 
   const userAuth = useSelector(selectUserAuth);
   const dispatch = useDispatch();
@@ -21,11 +21,11 @@ const LoginComp = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ILoginData>({
-    resolver: zodResolver(loginSchema)
+  } = useForm<IUserLoginData>({
+    resolver: zodResolver(userLoginSchema)
   })
 
-  const onSubmit = async (data:ILoginData) => {
+  const onSubmit = async (data:IUserLoginData) => {
     console.log('data en onSubmit ', data)
     dispatch(loginUser(data));
     reset();
@@ -76,7 +76,7 @@ const LoginComp = () => {
       <p className={styles.link}>
         Aún no tenés una cuenta?
         <Link 
-          to='/register'
+          to='/user-register'
           className={styles.register}
         >
           Registrarse
@@ -88,4 +88,4 @@ const LoginComp = () => {
   )
 }
 
-export default LoginComp
+export default UserLoginComp

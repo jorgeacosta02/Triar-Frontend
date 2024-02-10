@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 // es como si definiera un objeto de javascript
 // las propiedades son los datos que van a ir comparándose
-export const userSchema = z.object({
+export const userRegisterSchema = z.object({
     firstName: z
         .string()
         .min(1, {
@@ -55,7 +55,7 @@ export const userSchema = z.object({
         }),
 })
 
-export const loginSchema = z.object({
+export const userLoginSchema = z.object({
     dni: z
         .string()
         .min(1, {

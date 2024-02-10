@@ -1,13 +1,13 @@
-import styles from '../loginComp/_LoginComp.module.scss';
+import styles from '../loginComp/_UserLoginComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { userSchema } from '../../validations/zodSchemas';
+import { userRegisterSchema } from '../../validations/zodUserSchemas';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import { IRegisterData } from '../../Interfaces/userInterfaces';
+import { IUserRegisterData } from '../../Interfaces/userInterfaces';
 
 
-const RegisterComp
+const UserRegisterComp
  = () => {
 
   const {
@@ -16,17 +16,17 @@ const RegisterComp
     // watch,
     reset,
     formState: { errors },
-  } = useForm<IRegisterData>({
-    resolver: zodResolver(userSchema)
+  } = useForm<IUserRegisterData>({
+    resolver: zodResolver(userRegisterSchema)
   });
 
 
   const API = 'http://localhost:4000'
 
-  const onSubmit: SubmitHandler<IRegisterData> = async (data) => {
+  const onSubmit: SubmitHandler<IUserRegisterData> = async (data) => {
     console.log(data);
     try {
-      await axios.post(`${API}/register`, data);
+      await axios.post(`${API}/user-register`, data);
       console.log('Formulario enviado con éxito');
       reset();
     } catch (error) {
@@ -120,7 +120,7 @@ const RegisterComp
       <p className={styles.link}>
         Ya tenés una cuenta?
         <Link 
-          to='/login'
+          to='/user-login'
           className={styles.register}
         >
           Ingresar
@@ -130,5 +130,5 @@ const RegisterComp
   )
 }
 
-export default RegisterComp
+export default UserRegisterComp
 

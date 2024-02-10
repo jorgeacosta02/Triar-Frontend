@@ -1,9 +1,9 @@
-import RegisterComp from "../../components/registerComp/RegisterComp";
+import UserRegisterComp from "../../components/userRegisterComp/UserRegisterComp";
 
 const RegisterPage = () => {
   return (
     <div>
-      <RegisterComp/>
+      <UserRegisterComp/>
     </div>
   )
 }
