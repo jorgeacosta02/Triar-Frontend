@@ -82,24 +82,40 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   const [selectedCompleteDate, setSelectedCompleteDate] = useState(null)
   console.log('selectedDate: ', selectedDate)
   
-
+  //define los horaros del primer rango de turnos
   const definedStartHour1 = 9
-  const definedStartMinutes1 = 40
+  const definedStartMinutes1 = 20
   const definedEndHour1 = 13;
   const definedEndMinutes1 = 40
   const definedTimeSlot1 = 20
-  // Genera un arreglo de horas y minutos del día seleccionado
-  const startTime1 = (+definedStartHour1 * 60) + definedStartMinutes1; // 8 am en minutos
-  const endTime1 = (definedEndHour1 * 60) + definedEndMinutes1; // 8 pm en minutos
-    
-  const timeSlots1 = Array.from({ length: (endTime1 - startTime1) / definedTimeSlot1 }, (_, index) => {
-    const totalMinutes = startTime1 + index * definedTimeSlot1;
-    const hour = (Math.floor(totalMinutes / 60));
-    const minute = (totalMinutes % 60);
-    
-    return (`${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`);
-  });
+  const startTime1 = (+definedStartHour1 * 60) + definedStartMinutes1
+  const endTime1 = (definedEndHour1 * 60) + definedEndMinutes1
+
+  //define los horaros del segundo rango de turnos
+  const definedStartHour2 = 9
+  const definedStartMinutes2 = 50
+  const definedEndHour2 = 13;
+  const definedEndMinutes2 = 40
+  const definedTimeSlot2 = 20
+  const startTime2 = (+definedStartHour2 * 60) + definedStartMinutes2
+  const endTime2 = (definedEndHour2 * 60) + definedEndMinutes2
   
+  // Genera un arreglo de horas y minutos del rango seleccionado
+  const calcSlotsGroup = (startTime, endTime, slotTime) => {
+    const array = Array.from({ length: (endTime - startTime) / slotTime }, (_, index) => {
+      const totalMinutes = startTime + index * slotTime;
+      const hour = (Math.floor(totalMinutes / 60));
+      const minute = (totalMinutes % 60);
+      
+      return (`${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`);
+    })
+    return array
+  }
+
+  // Se crean los dos rangos de turno
+  const timeSlots1 = calcSlotsGroup(startTime1, endTime1, definedTimeSlot1)
+  const timeSlots2 = calcSlotsGroup(startTime2, endTime2, definedTimeSlot2)
+    
   const startLastSlotOfFirtsGroup = timeSlots1[timeSlots1.length-1]
   const [hourString, minuteString] = startLastSlotOfFirtsGroup.split(":");
   const endFirstGroup = (+parseInt(hourString) * 60) + parseInt(minuteString) + definedTimeSlot1;
@@ -155,25 +171,8 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
 
   // const endLastSlotOfFirtsGroup = addSlotToTime(startLastSlotOfFirtsGroup)
 
-  
-  const definedStartTime2 = 16;
-  const definedEndTime2 = 20;
-  const definedTimeSlot2 = 20;
-  const startTime2 = definedStartTime2 * 60; // 8 am en minutos
-  console.log('startTime2: ', startTime2)
-  const endTime2 = (definedEndTime2 - 1) * 60; // 8 pm en minutos
-  
-
   let isSecondStart = false;
   
-  const timeSlots2 = Array.from({ length: (endTime2 - startTime2) / 15 }, (_, index) => {
-    const totalMinutes = startTime2 + index * definedTimeSlot2;
-    const hour = (Math.floor(totalMinutes / 60));
-    const minute = (totalMinutes % 60);
-
-    return (`${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`);
-  });
-
   const handleSlotClick = (selectedTimeSlot: string) => {
 
     if(!selectedDate) return alert('Debe seleccionar un día.')
