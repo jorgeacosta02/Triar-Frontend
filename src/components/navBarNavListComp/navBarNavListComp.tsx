@@ -41,48 +41,43 @@ const NavBarNavListComp = () => {
             className={styles.navLink} 
            >Inicio</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
             to="/company" 
             className={styles.navLink} 
            >Empresa</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
             to="/appointment" 
             className={styles.navLink} 
            >Turnos online</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
             to="/equipment" 
             className={styles.navLink} 
            >Equipos</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
             to="/jobs" 
             className={styles.navLink} 
            >Trabajos</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
         <li onClick={handleClick} >
           <NavLink
             to="/contact" 
             className={styles.navLink} 
            >Contacto</NavLink>
         </li>
-        <li className={styles.splitBar}></li>
-        <li onClick={handleClick} >
+
+        <div onClick={handleClick} >
           <NavLink
             to="/tasks" 
-            className={styles.navLink} 
-           >Tareas</NavLink>
-        </li>
+            className={styles.intranet} 
+           >Intranet</NavLink>
+        </div>
 
 
         {accessLogin?.user?.id || userAuthId?.data?.user?.id

@@ -5,13 +5,13 @@ import { IUserData, ApiResponse } from '../../Interfaces/userInterfaces';
 
 
 interface UserState {
-    data: IUserData | null | string;
+    data: IUserData | null;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: UserState = {
-    data: 'nada',
+    data: null,
     loading: false,
     error: null,
 };

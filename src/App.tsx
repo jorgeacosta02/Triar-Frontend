@@ -4,12 +4,12 @@ import ServicesPage from './pages/servicesPage/servicesPage';
 import EquipmentPage from './pages/equipmentPage/equipmentPage';
 import JobsPage from './pages/jobsPage/jobsPage';
 import ContactPage from './pages/contactPage/contactPage';
-import RegisterPage from './pages/registerPage/RegisterPage';
-import LoginPage from './pages/loginPage/LoginPage';
+import UserRegisterPage from './pages/userRegisterPage/UserRegisterPage';
+import LoginPage from './pages/userLoginPage/UserLoginPage';
 import TasksPage from './pages/taskPages/TasksPage';
 import AddTaskPage from './pages/taskPages/AddTaskPage';
 import TaskByIdPage from './pages/taskPages/TaskByIdPage';
-import ProfilePage from './pages/profilePage/ProfilePage';
+import UserProfilePage from './pages/userProfilePage/UserProfilePage';
 import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesComp/EmployeesRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 import HomePage from './pages/HomePage/HomePage';
@@ -22,7 +22,7 @@ const App = () => {
         {/*Free Routes*/}
         <Route path="/" element={<HomePage />} />
         <Route path="/appointment" element={<CalendarPage />} />
-        <Route path='/user-register' element={<RegisterPage/>}/>
+        <Route path='/user-register' element={<UserRegisterPage/>}/>
         <Route path='/user-login' element={<LoginPage/>}/>
         <Route path="/company" element={<CompanyPage />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -35,7 +35,7 @@ const App = () => {
        <Route element={<EmployeesRoutesComp/>}>
         <Route path='/tasks' element={<TasksPage/>}/>
         <Route path='/task/:id' element={<TaskByIdPage/>}/>
-        <Route path='/profile' element={<ProfilePage/>}/>
+        <Route path='/user-profile' element={<UserProfilePage/>}/>
        </Route>
 
        {/* Admin Routes */}

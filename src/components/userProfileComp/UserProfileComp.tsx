@@ -1,10 +1,10 @@
-import styles from './_ProfileComp.module.scss'
+import styles from './_UserProfileComp.module.scss'
 import { getUserFromLocalStorage, cleanUserInlocalStorage } from '../localStorageComp/LocalStorageComp'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cleanUser } from '../../features/userAuth/userAuthSlice'
 
-const ProfileComp = () => {
+const UserProfileComp = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -36,4 +36,4 @@ const ProfileComp = () => {
     )
 }
 
-export default ProfileComp
+export default UserProfileComp

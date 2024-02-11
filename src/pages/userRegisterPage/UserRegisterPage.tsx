@@ -1,6 +1,6 @@
 import UserRegisterComp from "../../components/userRegisterComp/UserRegisterComp";
 
-const RegisterPage = () => {
+const UserRegisterPage = () => {
   return (
     <div>
       <UserRegisterComp/>
@@ -8,4 +8,4 @@ const RegisterPage = () => {
   )
 }
 
-export default RegisterPage
+export default UserRegisterPage

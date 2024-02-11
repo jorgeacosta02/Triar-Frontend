@@ -1,6 +1,6 @@
 import UserLoginComp from "../../components/userLoginComp/UserLoginComp"
 
-const LoginPage = () => {
+const UserLoginPage = () => {
   return (
     <div>
       <UserLoginComp />
@@ -8,4 +8,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default UserLoginPage
