@@ -51,7 +51,7 @@ export interface ApiResponse {
 
 // LocalStorage 'user'
 export interface ILocalStorageUserData {
-    _id: string,
+    id: string,
     firstName: string;
     lastName: string;
     dni: string;

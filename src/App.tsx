@@ -14,6 +14,9 @@ import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesCom
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 import HomePage from './pages/HomePage/HomePage';
 import CalendarPage from './pages/calendarPage/CalendarPage';
+import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
+
+
 const App = () => {
   return (
     <div>
@@ -29,6 +32,8 @@ const App = () => {
         <Route path="/equipment" element={<EquipmentPage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+
+        <Route path="/worker-register" element={<WorkerRegisterPage/>} />
 
         {/*Protected Routes*/}
         {/* Employees Routes*/}

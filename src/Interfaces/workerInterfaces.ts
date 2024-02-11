@@ -1,6 +1,6 @@
 
-// Interface for save prof in db
-export interface IProfData {
+// Interface for save worker in db
+export interface IWorkerData {
     firstName: string;
     lastName: string;
     dni: string;
@@ -12,9 +12,9 @@ export interface IProfData {
     role: string;
 }
 
-// Interface prof from db
-export interface IProfDataFromDB {
-    _id: string,
+// Interface prof worker db
+export interface IWorkerDataFromDB {
+    id: string,
     firstName: string;
     lastName: string;
     dni: string;
@@ -26,8 +26,8 @@ export interface IProfDataFromDB {
     role: string;
 }
 
-// Interface for register prof
-export interface IProfRegisterData {
+// Interface for register worker
+export interface IWorkerRegisterData {
     firstName: string;
     lastName: string;
     dni: string;
@@ -38,20 +38,20 @@ export interface IProfRegisterData {
 }
 
 // LOGIN
-export interface IProfLoginData {
+export interface IWorkerLoginData {
     dni: string;
     password: string;
   }
 
 // ApiResponse
 export interface ApiResponse {
-    user: IProfData;
+    user: IWorkerData;
     message: string;
 }
 
 // LocalStorage 'prof'
-export interface ILocalStorageProfData {
-    _id: string,
+export interface ILocalStorageWorkerData {
+    id: string,
     firstName: string;
     lastName: string;
     dni: string;
