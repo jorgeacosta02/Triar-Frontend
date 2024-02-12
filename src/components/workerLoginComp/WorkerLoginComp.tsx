@@ -2,7 +2,7 @@ import styles from './_WorkerLoginComp.module.scss'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { workerLoginSchema } from '../../validations/zodWorkerSchemas';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { IWorkerLoginData } from '../../Interfaces/workerInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectWorkerAuth } from '../../features/workerAuth/workerAuthSlice';
@@ -36,8 +36,8 @@ const WorkerLoginComp = () => {
   
   console.log('document.cookie', document);
 
-  const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
-  console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
+  // const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
+  // console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
 
  
   return (
