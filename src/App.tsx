@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+
+// Pages imports
 import CompanyPage from './pages/HomePage/HomePage';
 import ServicesPage from './pages/servicesPage/servicesPage';
 import EquipmentPage from './pages/equipmentPage/equipmentPage';
@@ -10,13 +12,14 @@ import TasksPage from './pages/taskPages/TasksPage';
 import AddTaskPage from './pages/taskPages/AddTaskPage';
 import TaskByIdPage from './pages/taskPages/TaskByIdPage';
 import UserProfilePage from './pages/userProfilePage/UserProfilePage';
-import EmployeesRoutesComp from './components/protectedRoutes/EmployeesRoutesComp/EmployeesRoutesComp';
-import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 import HomePage from './pages/HomePage/HomePage';
 import CalendarPage from './pages/calendarPage/CalendarPage';
 import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
 import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
 
+// Components imports
+import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserComp';
+import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 
 const App = () => {
   return (
@@ -39,7 +42,7 @@ const App = () => {
 
         {/*Protected Routes*/}
         {/* Employees Routes*/}
-       <Route element={<EmployeesRoutesComp/>}>
+       <Route element={<UserRoutesComp/>}>
         <Route path='/tasks' element={<TasksPage/>}/>
         <Route path='/task/:id' element={<TaskByIdPage/>}/>
         <Route path='/user-profile' element={<UserProfilePage/>}/>

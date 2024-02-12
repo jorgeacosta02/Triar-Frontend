@@ -29,15 +29,19 @@ const WorkerLoginComp = () => {
     console.log('data en onSubmit ', data)
     dispatch(loginWorker(data));
     reset();
-    navigate('/');
+    console.log(workerAuth)
+    // if(workerAuth.data?.role === 'prof'){
+    //   navigate('/worker-profile');
+    // }
+    alert('No tiene autorización para ingresar a esta ruta.')
   };
   
   console.log('workerAuth en WorkerLoginComp:  ',workerAuth);
   
   console.log('document.cookie', document);
 
-  // const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
-  // console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
+  const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
+  console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
 
  
   return (
@@ -73,17 +77,6 @@ const WorkerLoginComp = () => {
           Ingresar
         </button>
       </form>
-      <p className={styles.link}>
-        Aún no tenés una cuenta?
-        {/* <Link 
-          to='/worker-register'
-          className={styles.register}
-        >
-          Registrarse
-        </Link> */}
-      </p>
-        {/* <Link to='/company'>Company</Link>
-        <Link to='/tasks'>TasksPage</Link> */}
     </div>
   )
 }

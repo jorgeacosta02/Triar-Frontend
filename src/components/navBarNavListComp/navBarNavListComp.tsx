@@ -84,7 +84,7 @@ const NavBarNavListComp = () => {
         ? <div className={styles.profileContainer}>
             <li>
               <NavLink
-                to='/profile'
+                to='/user-profile'
                 className={styles.profile}
               >
                 Mi perfil
@@ -94,7 +94,7 @@ const NavBarNavListComp = () => {
           : <div  className={styles.loginLinks}>
               <li onClick={handleClick} >
                 <NavLink
-                  to="/login" 
+                  to="/user-login" 
                   className={styles.logLink} 
                 >
                   Ingresar
@@ -102,7 +102,7 @@ const NavBarNavListComp = () => {
               </li>
               <li onClick={handleClick} >
                 <NavLink
-                  to="/register" 
+                  to="/user-register" 
                   className={styles.logLink} 
                   >
                     Registrarse

@@ -7,7 +7,7 @@ export const localStorageSetUserData = (data:IUserDataFromDB) => {
 
 
     const user = {
-        id: data._id,
+        id: data.id,
         firstName : data.firstName,
         lastName : data.lastName,
         dni: data.dni,

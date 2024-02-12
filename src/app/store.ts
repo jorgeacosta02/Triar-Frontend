@@ -1,11 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from '../features/menu/menuSlice';
+import { configureStore } from "@reduxjs/toolkit"
+import menuReducer from '../features/menu/menuSlice'
 import userAuthReducer from '../features/userAuth/userAuthSlice'
+import workerAuthReducer from '../features/workerAuth/workerAuthSlice'
 
 export const store = configureStore ({
   reducer: {
     menu: menuReducer,
-    userAuth: userAuthReducer
+    userAuth: userAuthReducer,
+    workerAuth: workerAuthReducer
   }
 })
 
