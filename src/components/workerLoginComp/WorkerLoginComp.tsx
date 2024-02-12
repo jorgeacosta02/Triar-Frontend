@@ -5,14 +5,14 @@ import { workerLoginSchema } from '../../validations/zodWorkerSchemas';
 import { Link } from 'react-router-dom';
 import { IWorkerLoginData } from '../../Interfaces/workerInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserAuth } from '../../features/userAuth/userAuthSlice';
-import { loginUser } from '../../app/actions';
+import { selectWorkerAuth } from '../../features/workerAuth/workerAuthSlice';
+import { loginWorker } from '../../app/actions';
 import { useNavigate } from 'react-router-dom';
 
 
 const WorkerLoginComp = () => {
 
-  const userAuth = useSelector(selectUserAuth);
+  const workerAuth = useSelector(selectWorkerAuth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -27,17 +27,17 @@ const WorkerLoginComp = () => {
 
   const onSubmit = async (data:IWorkerLoginData) => {
     console.log('data en onSubmit ', data)
-    dispatch(loginUser(data));
+    dispatch(loginWorker(data));
     reset();
     navigate('/');
   };
   
-  console.log('userAuth en LoginComp:  ',userAuth);
+  console.log('workerAuth en WorkerLoginComp:  ',workerAuth);
   
   console.log('document.cookie', document);
 
-  const userAuthCompleteReducer = useSelector((state: any) => state.userAuth.data);
-  console.log('userAuthCompleteReducer state.usrerAuth.data in LoginAction :',userAuthCompleteReducer);
+  const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
+  console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
 
  
   return (
@@ -75,12 +75,12 @@ const WorkerLoginComp = () => {
       </form>
       <p className={styles.link}>
         Aún no tenés una cuenta?
-        <Link 
-          to='/user-register'
+        {/* <Link 
+          to='/worker-register'
           className={styles.register}
         >
           Registrarse
-        </Link>
+        </Link> */}
       </p>
         {/* <Link to='/company'>Company</Link>
         <Link to='/tasks'>TasksPage</Link> */}

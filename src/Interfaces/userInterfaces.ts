@@ -14,7 +14,7 @@ export interface IUserData {
 
 // Interface user from db
 export interface IUserDataFromDB {
-    _id: string,
+    id: string,
     firstName: string;
     lastName: string;
     dni: string;

@@ -74,7 +74,7 @@ const NavBarNavListComp = () => {
 
         <div onClick={handleClick} >
           <NavLink
-            to="/worker-register" 
+            to="/worker-login" 
             className={styles.intranet} 
            >Intranet</NavLink>
         </div>

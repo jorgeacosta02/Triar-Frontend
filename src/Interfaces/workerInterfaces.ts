@@ -45,7 +45,7 @@ export interface IWorkerLoginData {
 
 // ApiResponse
 export interface ApiResponse {
-    user: IWorkerData;
+    worker: IWorkerData;
     message: string;
 }
 

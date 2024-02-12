@@ -15,6 +15,7 @@ import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminR
 import HomePage from './pages/HomePage/HomePage';
 import CalendarPage from './pages/calendarPage/CalendarPage';
 import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
+import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
+        <Route path="/worker-login" element={<WorkerLoginPage/>}/>
         <Route path="/worker-register" element={<WorkerRegisterPage/>} />
 
         {/*Protected Routes*/}
