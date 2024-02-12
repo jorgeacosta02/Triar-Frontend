@@ -18,7 +18,7 @@ import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
 import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
 
 // Components imports
-import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserComp';
+import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 
 const App = () => {

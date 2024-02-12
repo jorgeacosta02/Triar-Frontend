@@ -1,10 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { getUserFromLocalStorage } from "../../localStorageComp/LocalStorageComp";
+import { getDataFromLocalStorage } from "../../localStorageComp/LocalStorageComp";
 
 
 const AdminRoutesComp = () => {
 
-  const userFLS = getUserFromLocalStorage();
+  const userFLS = getDataFromLocalStorage('accessLogin');
 
   if (userFLS?.user?.role === 'admin' && userFLS?.user?.active) {
     console.log('dentro del if')

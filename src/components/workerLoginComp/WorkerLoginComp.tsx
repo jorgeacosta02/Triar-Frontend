@@ -27,13 +27,8 @@ const WorkerLoginComp = () => {
 
   const onSubmit = async (data:IWorkerLoginData) => {
     console.log('data en onSubmit ', data)
-    dispatch(loginWorker(data));
+    await dispatch(loginWorker(data));
     reset();
-    console.log(workerAuth)
-    // if(workerAuth.data?.role === 'prof'){
-    //   navigate('/worker-profile');
-    // }
-    alert('No tiene autorización para ingresar a esta ruta.')
   };
   
   console.log('workerAuth en WorkerLoginComp:  ',workerAuth);
@@ -43,6 +38,11 @@ const WorkerLoginComp = () => {
   const workerAuthCompleteReducer = useSelector((state: any) => state.workerAuth.data);
   console.log('workerAuthCompleteReducer state.workerAuth.data in WorkerLoginAction :',workerAuthCompleteReducer);
 
+  console.log('workerAuth en on Submit: ', workerAuth)
+  if(workerAuth?.data?.role === 'prof'){
+    console.log('por ir a /worker-profile')
+    navigate('/worker-profile')
+  }
  
   return (
     <div className={styles.container}>

@@ -1,5 +1,5 @@
-import styles from './_UserProfileComp.module.scss'
-import { getDataFromLocalStorage, cleanDataInLocalStorage } from '../localStorageComp/LocalStorageComp'
+import styles from './_WorkerProfileComp.module.scss'
+import { getWorkerFromLocalStorage, cleanWorkerInlocalStorage } from '../localStorageComp/LocalStorageComp'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cleanUser } from '../../features/userAuth/userAuthSlice'
@@ -8,10 +8,10 @@ const UserProfileComp = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = getDataFromLocalStorage('accessLogin').user;
+    const user = getUserFromLocalStorage().user;
 
     const clickHandler = () => {
-        cleanDataInLocalStorage('accessLogin');
+        cleanUserInlocalStorage();
         dispatch(cleanUser());
         navigate('/company');
     }

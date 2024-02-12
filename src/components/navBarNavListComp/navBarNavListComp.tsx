@@ -3,13 +3,13 @@ import styles from './_navBarNavListComp.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState } from "../../features/menu/menuSlice";
 import { falseMenu } from "../../features/menu/menuSlice";
-import { getUserFromLocalStorage } from "../localStorageComp/LocalStorageComp";
+import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 import { selectUserAuth } from "../../features/userAuth/userAuthSlice";
 
 
 const NavBarNavListComp = () => {
 
-  const accessLogin = getUserFromLocalStorage();
+  const accessLogin = getDataFromLocalStorage('accessLogin');
   console.log('user in navBarNavList:', accessLogin);
   const userId = accessLogin?.user?.id;
   console.log('userId en NavBarNavListComp: ', userId);
