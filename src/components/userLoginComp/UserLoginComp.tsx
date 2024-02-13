@@ -74,7 +74,7 @@ const UserLoginComp = () => {
             Ingresar
           </button>
         </form>
-        <p className={styles.link}>
+        <p className={styles.linkContainer}>
           Aún no tenés una cuenta?
           <Link 
             to='/user-register'

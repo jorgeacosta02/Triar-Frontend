@@ -2,18 +2,20 @@
 
 .container{
     box-sizing: border-box;
-    background-image: url('../../assets/Images/Slider/22.jpg');
+    background-image: url('../../assets/Images/Others/digitization-7114791_640.jpg');
     color: g.$light-black-color;
     width: 100vw;
     min-height: 100vh;
-    padding: 10vh 5%;
+    // padding: 10vh 5%;
     @include g.create-flexbox(column, space-around);
+    background-size: cover;
     .formContainer{
         box-sizing: border-box;
         padding: 4vh 4vw;
         width: 90%;
+        max-width: 400px;
         border: 2px solid g.$white-color;
-        background-color: rgba(255,255,255,.8);
+        background-color: rgba(255,255,255,.7);
         border-radius: 10px;
         box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
         form{
@@ -33,19 +35,28 @@
                 align-items: flex-start;
                 label{
                     font-size: g.$mobile-p-font-size;
+                    @include g.display-large{
+                        font-size: g.$desk-p-font-size;
+                    }
                 }
                 input{
                     box-sizing: border-box;
                     width: 100%;
                     font-size: g.$mobile-p-font-size;
-                    background-color: rgba(255,255,255,.6);
+                    background-color: rgba(255,255,255,.7);
                     border: none;
                     height: 20px;
+                    @include g.display-large{
+                        font-size: g.$desk-p-font-size;
+                    }
           
                 }
                 span{
                     font-size: calc(g.$mobile-p-font-size * .9);
                     color: g.$red-color;
+                    @include g.display-large{
+                        font-size: g.$desk-p-font-size;
+                    }
                 }
             }
             .submit{
@@ -57,7 +68,7 @@
                 width: 70%;
                 height: 36px;
                 font-weight: 300;
-                font-size: calc(g.$mobile-h2-font-size * .85);
+                // font-size: calc(g.$mobile-h2-font-size * .85);
                 @include g.display-large{
                     font-size: calc(g.$desk-h3-font-size * 1); 
                 };
@@ -69,16 +80,22 @@
                 color: g.$grey-color;
             }
         }
-        .link{
+        .linkContainer{
             color: g.$dark-black-color;
             width: 100%;
             font-size: calc(g.$mobile-p-font-size * .9);
+            @include g.display-large{
+                font-size: g.$desk-p-font-size;
+            }
             @include g.create-flexbox(row, space-between);
             .register{
                 text-decoration: none;
                 color: g.$main-dark-color;
                 font-size: calc(g.$mobile-p-font-size * 1);
                 font-weight: 400;
+                @include g.display-large{
+                    font-size: g.$desk-p-font-size;
+                }
             }
         }
     }

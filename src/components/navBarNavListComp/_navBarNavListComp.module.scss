@@ -18,6 +18,10 @@
     font-weight: 600;
     padding: 2vh 1px;
     @include g.display-large{
+        background-color: transparent;
+        border: none;
+        border-radius: none;
+        box-shadow: none;
         justify-content: space-between;
         flex-direction: row;
         top: -13px;
@@ -96,7 +100,8 @@
             background-color: g.$main-dark-color;
             border-radius: 50% / 180%;
             height: 80%;
-            width: 28%;
+            width: 38%;
+            min-width: 150px;
             margin-left: 2vw;
         }
         .logLink{// li
