@@ -10,11 +10,11 @@
     left: 0;
     padding: 0 2vw;
     margin: 0;
-    background-color: rgba(255,255,255,.4);
     @include g.create-flexbox(row, space-between);
     z-index: 1000;
-    border-bottom: 10px solid g.$main-dark-color;
     @include g.display-large{
+        background-color: rgba(255, 255, 255, .6);
+        border-bottom: 10px solid g.$main-dark-color;
         height: g.$desk-NavBar-height;
     }
 }

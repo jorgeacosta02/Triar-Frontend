@@ -13,7 +13,7 @@ import img08 from '../../assets/Images/Slider/19.jpg';
 import img09 from '../../assets/Images/Slider/20.jpg';
 import img10 from '../../assets/Images/Slider/21.jpg';
 import img11 from '../../assets/Images/Slider/22.jpg';
-import img07 from '../../assets/Images/Slider/23.jpg';
+import img07 from '../../assets/Images/Slider/24.jpeg';
 
 const HomeComp = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,21 +45,22 @@ const HomeComp = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.sliderContainer}>
-        <div className={styles.slider}>
-          {images.map((image, index) => (
-            <div
-              className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
-              key={index}
-            >
-              <img
-                src={image}
-                alt=""
-                className={styles.img}
-              />
-            </div>
-          ))}
-        </div>
+      <div className={styles.slider}>
+        {images.map((image, index) => (
+          <div
+            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+            key={index}
+          >
+            <img
+              src={image}
+              alt=""
+              className={styles.img}
+            />
+          </div>
+        ))}
+      </div>
+      <div>
+        <h1>Segundo div</h1>
       </div>
     </div>
   );
