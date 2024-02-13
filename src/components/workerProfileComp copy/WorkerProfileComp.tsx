@@ -1,18 +1,17 @@
 import styles from './_WorkerProfileComp.module.scss'
-import { getWorkerFromLocalStorage, cleanWorkerInlocalStorage } from '../localStorageComp/LocalStorageComp'
+import { getDataFromLocalStorage, cleanDataInLocalStorage } from '../localStorageComp/LocalStorageComp'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { cleanUser } from '../../features/userAuth/userAuthSlice'
-
-const UserProfileComp = () => {
+import { cleanWorker } from '../../features/workerAuth/workerAuthSlice';
+const WorkerProfileComp = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = getUserFromLocalStorage().user;
+    const worker = getDataFromLocalStorage('accessLogin').worker;
 
     const clickHandler = () => {
-        cleanUserInlocalStorage();
-        dispatch(cleanUser());
+        cleanDataInLocalStorage('accessLogin');
+        dispatch(cleanWorker());
         navigate('/company');
     }
 
@@ -24,11 +23,11 @@ const UserProfileComp = () => {
         <div className={styles.container}>
             <h1>Mi perfil</h1>
             <div className={styles.data}>
-                <p>{`Nombre: ${user.firstName.toUpperCase()}`}</p>
-                <p>{`Apellido: ${user.lastName.toUpperCase()}`}</p>
-                <p>{`Dni: ${user.dni ? user.dni : 'sin número'}`}</p>
-                <p>{`Teléfono: ${user.phone}`}</p>
-                <p>{`Email: ${user.email}`}</p>
+                <p>{`Nombre: ${worker.firstName.toUpperCase()}`}</p>
+                <p>{`Apellido: ${worker.lastName.toUpperCase()}`}</p>
+                <p>{`Dni: ${worker.dni ? worker.dni : 'sin número'}`}</p>
+                <p>{`Teléfono: ${worker.phone}`}</p>
+                <p>{`Email: ${worker.email}`}</p>
             </div>
             <button onClick={clickHandler}>Cerrar sesión</button>
             <button onClick={goBackHandler}>Volver</button>
@@ -36,4 +35,4 @@ const UserProfileComp = () => {
     )
 }
 
-export default UserProfileComp
+export default WorkerProfileComp

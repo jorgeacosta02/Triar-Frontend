@@ -16,9 +16,11 @@ import HomePage from './pages/HomePage/HomePage';
 import CalendarPage from './pages/calendarPage/CalendarPage';
 import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
 import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
+import WorkerProfilePage from './pages/workerProfilePage/WorkerProfilePage';
 
 // Components imports
 import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserRoutesComp';
+import WorkerRoutesComp from './components/protectedRoutes/workerRoutesComp/WorkerRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
 
 const App = () => {
@@ -40,15 +42,19 @@ const App = () => {
         <Route path="/worker-login" element={<WorkerLoginPage/>}/>
         <Route path="/worker-register" element={<WorkerRegisterPage/>} />
 
-        {/*Protected Routes*/}
-        {/* Employees Routes*/}
+        {/* User Protected Routes*/}
        <Route element={<UserRoutesComp/>}>
         <Route path='/tasks' element={<TasksPage/>}/>
         <Route path='/task/:id' element={<TaskByIdPage/>}/>
         <Route path='/user-profile' element={<UserProfilePage/>}/>
        </Route>
 
-       {/* Admin Routes */}
+       {/* Worker Protected  Routes */}
+       <Route element={<WorkerRoutesComp/>}>
+        <Route path='/worker-profile' element={<WorkerProfilePage/>}/>
+       </Route>
+
+       {/* Admin Protected Routes */}
        <Route element={<AdminRoutesComp/>}>
         <Route path='/add-task' element={<AddTaskPage/>}/>
        </Route>
