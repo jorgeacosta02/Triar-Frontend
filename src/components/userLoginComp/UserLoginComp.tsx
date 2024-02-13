@@ -42,48 +42,48 @@ const UserLoginComp = () => {
  
   return (
     <div className={styles.container}>
-       <form
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <h2 className={styles.title}>
-          Ingresar
-        </h2>
-        <div className={styles.inputBlock}>
-          <label htmlFor='dni'>Dni</label>
-          <input type='text' {...register(
-            'dni',
-            { required: 'El dni es requerido' })}
-            placeholder='Ingrese dni...'
-          />
-          {errors.dni && <span>{errors.dni.message}</span>}
-        </div>
-        <div className={styles.inputBlock}>
-          <label htmlFor='password'>Contraseña</label>
-          <input type='password' {...register(
-            'password',
-            { required: 'La contraseña es requerida' })}
-            placeholder='Ingrese contraseña...'
-          />
-        {errors.password && <span>{errors.password.message}</span>}
-        </div>
-        <button
-          className={styles.submit}
-          type='submit'
+      <div className={styles.formContainer}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
         >
-          Ingresar
-        </button>
-      </form>
-      <p className={styles.link}>
-        Aún no tenés una cuenta?
-        <Link 
-          to='/user-register'
-          className={styles.register}
-        >
-          Registrarse
-        </Link>
-      </p>
-        {/* <Link to='/company'>Company</Link>
-        <Link to='/tasks'>TasksPage</Link> */}
+          <h2 className={styles.title}>
+            Ingresar
+          </h2>
+          <div className={styles.inputBlock}>
+            <label htmlFor='dni'>Dni</label>
+            <input type='text' {...register(
+              'dni',
+              { required: 'El dni es requerido' })}
+              placeholder='Ingrese dni...'
+            />
+            {errors.dni && <span>{errors.dni.message}</span>}
+          </div>
+          <div className={styles.inputBlock}>
+            <label htmlFor='password'>Contraseña</label>
+            <input type='password' {...register(
+              'password',
+              { required: 'La contraseña es requerida' })}
+              placeholder='Ingrese contraseña...'
+            />
+          {errors.password && <span>{errors.password.message}</span>}
+          </div>
+          <button
+            className={styles.submit}
+            type='submit'
+          >
+            Ingresar
+          </button>
+        </form>
+        <p className={styles.link}>
+          Aún no tenés una cuenta?
+          <Link 
+            to='/user-register'
+            className={styles.register}
+          >
+            Registrarse
+          </Link>
+        </p>
+      </div>
     </div>
   )
 }

@@ -13,7 +13,7 @@ const UserProfileComp = () => {
     const clickHandler = () => {
         cleanDataInLocalStorage('accessLogin');
         dispatch(cleanUser());
-        navigate('/company');
+        navigate('/');
     }
 
     const goBackHandler = () => {

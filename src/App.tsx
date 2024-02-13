@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 // Pages imports
-import CompanyPage from './pages/HomePage/HomePage';
-import ServicesPage from './pages/servicesPage/servicesPage';
-import EquipmentPage from './pages/equipmentPage/equipmentPage';
-import JobsPage from './pages/jobsPage/jobsPage';
+// import CompanyPage from './pages/HomePage/HomePage';
+// import ServicesPage from './pages/servicesPage/servicesPage';
+// import EquipmentPage from './pages/equipmentPage/equipmentPage';
+// import JobsPage from './pages/jobsPage/jobsPage';
 import ContactPage from './pages/contactPage/contactPage';
 import UserRegisterPage from './pages/userRegisterPage/UserRegisterPage';
 import LoginPage from './pages/userLoginPage/UserLoginPage';
@@ -33,10 +33,10 @@ const App = () => {
         <Route path="/appointment" element={<CalendarPage />} />
         <Route path='/user-register' element={<UserRegisterPage/>}/>
         <Route path='/user-login' element={<LoginPage/>}/>
-        <Route path="/company" element={<CompanyPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/equipment" element={<EquipmentPage />} />
-        <Route path="/jobs" element={<JobsPage />} />
+        {/* <Route path="/company" element={<CompanyPage />} /> */}
+        {/* <Route path="/services" element={<ServicesPage />} /> */}
+        {/* <Route path="/equipment" element={<EquipmentPage />} /> */}
+        {/* <Route path="/jobs" element={<JobsPage />} /> */}
         <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/worker-login" element={<WorkerLoginPage/>}/>

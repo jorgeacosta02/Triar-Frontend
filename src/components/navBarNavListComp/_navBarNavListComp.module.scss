@@ -10,7 +10,10 @@
     right: -100%;
     transition: right .2s ease;
     z-index: 200;
-    background-color: g.$white-color;
+    border: 2px solid g.$white-color;
+    background-color: rgba(255,255,255,.85);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);
     height: calc(100vh - (g.$mobile-NavBar-height) - 10vh);
     font-weight: 600;
     padding: 2vh 1px;
@@ -21,7 +24,7 @@
         height: g.$desk-NavBar-height;
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
-        width: 60%;
+        width: 40%;
         min-width: 420px;
         right: 5%;
         line-height: g.$desk-NavBar-height;

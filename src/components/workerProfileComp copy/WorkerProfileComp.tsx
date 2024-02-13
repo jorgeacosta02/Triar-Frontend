@@ -12,7 +12,7 @@ const WorkerProfileComp = () => {
     const clickHandler = () => {
         cleanDataInLocalStorage('accessLogin');
         dispatch(cleanWorker());
-        navigate('/company');
+        navigate('/');
     }
 
     const goBackHandler = () => {
