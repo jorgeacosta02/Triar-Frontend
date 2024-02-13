@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+// import { useSelector } from 'react-redux';
 import styles from './_HomeComp.module.scss';
 
 // Importa tus imágenes
-import img01 from '../../assets/Images/Slider/12.jpg';
-import img02 from '../../assets/Images/Slider/2.jfif';
-import img03 from '../../assets/Images/Slider/3.jfif';
-import img04 from '../../assets/Images/Slider/4.jfif';
-import img05 from '../../assets/Images/Slider/5.jfif';
-import img06 from '../../assets/Images/Slider/6.jfif';
-import img07 from '../../assets/Images/Slider/7.jfif';
-import img08 from '../../assets/Images/Slider/8.jfif';
-import img09 from '../../assets/Images/Slider/9.jfif';
-import img10 from '../../assets/Images/Slider/10.jfif';
-import img11 from '../../assets/Images/Slider/11.jfif';
+import img01 from '../../assets/Images/Slider/13.jpg';
+import img02 from '../../assets/Images/Slider/14.jpg';
+import img03 from '../../assets/Images/Slider/15.jpg';
+import img04 from '../../assets/Images/Slider/16.jpg';
+import img05 from '../../assets/Images/Slider/17.jpg';
+import img06 from '../../assets/Images/Slider/18.jpg';
+import img08 from '../../assets/Images/Slider/19.jpg';
+import img09 from '../../assets/Images/Slider/20.jpg';
+import img10 from '../../assets/Images/Slider/21.jpg';
+import img11 from '../../assets/Images/Slider/22.jpg';
+import img07 from '../../assets/Images/Slider/23.jpg';
 
 const HomeComp = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

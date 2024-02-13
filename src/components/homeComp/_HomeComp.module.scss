@@ -2,30 +2,30 @@
 
 .container{
     // max-width: 100%;
-    width: 100vw;
+    width: 100%;
     position: relative;
     top: -85px;
     margin-top: g.$mobile-NavBar-height;
     // min-height: vh;
-    background-color: green;
+    // background-color: green;
     overflow: hidden;
     .sliderContainer {
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         margin: auto;
         overflow: hidden;
         // background-color: blue;
         .slider {
-            background-color: red;
+            // background-color: red;
             position: relative; // Establece el posicionamiento relativo para el contenedor del slider
             top: 0;
             left: 0;
             overflow: hidden;
-            height: 100vh;
+            height: 120vh;
           }
           
           .slide {
-            background-color: blue;
+            // background-color: blue;
             z-index: 1;
             position: absolute; // Establece el posicionamiento absoluto para cada imagen dentro del slider
             top: 0; // Coloca las imágenes en la parte superior del contenedor
