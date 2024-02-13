@@ -1,5 +1,5 @@
 import styles from './_HomeComp.module.scss';
-import img01 from '../../assets/Images/Slider/1.jfif'
+import img01 from '../../assets/Images/Slider/12.jpg'
 import img02 from '../../assets/Images/Slider/2.jfif'
 import img03 from '../../assets/Images/Slider/3.jfif'
 import img04 from '../../assets/Images/Slider/4.jfif'
@@ -16,30 +16,44 @@ import { useState, useEffect } from 'react';
 
 const HomeComp = () => {
 
-  // const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     // Cambia a la siguiente imagen cada 3 segundos (ajusta según tus necesidades)
-  //     setCurrentSlide((prevSlide) => (prevSlide + 1) % 11);
-  //   }, 3000); // Intervalo de 3 segundos
-  //   return () => clearInterval(interval);
-  // }, []); // Se ejecuta solo una vez al montar el componente
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Cambia a la siguiente imagen cada 3 segundos (ajusta según tus necesidades)
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % 11);
+    }, 3000); // Intervalo de 3 segundos
+    return () => clearInterval(interval);
+  }, []); // Se ejecuta solo una vez al montar el componente
 
-  
+  console.log(currentSlide)
+
   const userAuthCompleteReducer = useSelector((state: any) => state.userAuth);
   console.log('userAuthCompleteReducer.data :', userAuthCompleteReducer.data);
   console.log('company');
 
+  const images = [
+    img01,
+    img02,
+    img03,
+    img04,
+    img05,
+    img06,
+    img07,
+    img08,
+    img09,
+    img10,
+    img11
+  ];
 
   return (
     <div className={styles.container}>
       <div className={styles.sliderContainer}>
         <div className={styles.slider}>
           <div className={styles.slide}>
-            <img src={img01} alt="" />
+            <img src={images[currentSlide]} alt="" />
           </div>
-          <div className={styles.slide}>
+          {/* <div className={styles.slide}>
             <img src={img02} alt="" />
           </div>
           <div className={styles.slide}>
@@ -68,7 +82,7 @@ const HomeComp = () => {
           </div>
           <div className={styles.slide}>
             <img src={img11} alt="" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
