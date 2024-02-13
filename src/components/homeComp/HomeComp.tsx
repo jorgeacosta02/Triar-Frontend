@@ -21,10 +21,12 @@ const HomeComp = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % 11);
-    }, 3000); // Cambia a la siguiente imagen cada 3 segundos
+    }, 5000); // Cambia a la siguiente imagen cada 3 segundos
 
     return () => clearInterval(interval);
   }, []); // Se ejecuta solo una vez al montar el componente
+
+  console.log(currentSlide)
 
   // Define un arreglo con las imágenes
   const images = [
