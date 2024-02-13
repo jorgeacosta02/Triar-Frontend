@@ -1,25 +1,29 @@
 @use '../../styles/globals' as g;
 
 .container{
-    max-width: 100%;
+    // max-width: 100%;
+    width: 100vw;
     position: relative;
     margin-top: g.$mobile-NavBar-height;
-    min-height: 100vh;
-
+    min-height: 50vh;
+    background-color: red;
     .sliderContainer {
-        width: 80%;
+        width: 100%;
         margin: auto;
         overflow: hidden;
-    }
-    
-    .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
-    
-    .slide {
-        min-width: 100%;
-        box-sizing: border-box;
+        background-color: blue;
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            background-color: green;
+            .slide {
+                min-width: 100vw;
+                box-sizing: border-box;
+                .img{
+                    width: 100%;
+                }
+            }
+        }
     }
 
 

@@ -51,38 +51,12 @@ const HomeComp = () => {
       <div className={styles.sliderContainer}>
         <div className={styles.slider}>
           <div className={styles.slide}>
-            <img src={images[currentSlide]} alt="" />
+            <img
+              className={styles.img}
+              src={images[currentSlide]}
+              alt=""
+            />
           </div>
-          {/* <div className={styles.slide}>
-            <img src={img02} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img03} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img04} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img05} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img06} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img07} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img08} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img09} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img10} alt="" />
-          </div>
-          <div className={styles.slide}>
-            <img src={img11} alt="" />
-          </div> */}
         </div>
       </div>
     </div>
