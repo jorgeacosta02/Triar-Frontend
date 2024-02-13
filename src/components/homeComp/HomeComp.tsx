@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { useSelector } from 'react-redux';
 import styles from './_HomeComp.module.scss';
 
 // Importa tus imágenes
@@ -48,18 +47,18 @@ const HomeComp = () => {
       <div className={styles.slider}>
         {images.map((image, index) => (
           <div
-            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+          className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
             key={index}
           >
             <img
               src={image}
               alt=""
               className={styles.img}
-            />
+              />
           </div>
         ))}
       </div>
-      <div>
+      <div className={styles.div}>
         <h1>Segundo div</h1>
       </div>
     </div>

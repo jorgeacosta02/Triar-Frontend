@@ -1,35 +1,22 @@
 @use '../../styles/globals' as g;
 
 .container{
-    // max-width: 100%;
-    width: 100%;
-    // margin-top: g.$mobile-NavBar-height;
-    position: relative;
-    // top: -85px;
-    // min-height: vh;
-    // background-color: green;
-    // overflow: hidden;
-    // .sliderContainer {
-    //     width: 100%;
-    //     height: 70vh;
-    //     margin: auto;
-    //     overflow: hidden;
-    //     // background-color: blue;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
   .slider {
-      // background-color: red;
-      position: relative; // Establece el posicionamiento relativo para el contenedor del slider
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      height: 50vh;
-      width: 100vw;
-      @include g.create-flexbox(row, center);
-      .slide {
-        background-color: blue;
-      z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 50vw;
+    min-height: 50vh;
+    width: 100%;
+    @include g.create-flexbox(row, center);
+    .slide {
       position: absolute; // Establece el posicionamiento absoluto para cada imagen dentro del slider
+      z-index: 1;
       top: 0; // Coloca las imágenes en la parte superior del contenedor
-      // left: 0; // Coloca las imágenes en la parte izquierda del contenedor
       opacity: 0; // Oculta inicialmente todas las imágenes
       transition: opacity 5s ease-in-out; // Agrega una transición suave a la opacidad
       width: 100%;
@@ -37,186 +24,22 @@
       .img{
         position: absolute;
         top: 0;
-        min-width:100vw;
+        height: 50vw;
         min-height: 50vh;
-        max-width: 120vw;
+        width: 100%;
         object-fit: cover; /* La imagen se ajusta manteniendo su relación de aspecto, mostrando todo el contenido */
+        @include g.display-large{
+          
+        }
       }
       &.active {
         opacity: 1; // Muestra la imagen activa
       }
     }
   }
+  .div{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
-
-
-
-
-// .title{
-  //     font-size: g.$mobile-h1-font-size;
-  //     @include g.display-large{
-    //         font-size: g.$desk-h1-font-size;
-    //         text-align: center;
-    //         margin-bottom: 60px;
-    //     }
-    // }
-    
-    // .mainImage {
-    //     max-width: 100%;
-    //     position: relative;
-    //     box-sizing: border-box;
-    //     width: 100vw;
-    //     height: 270px;
-    //     overflow: hidden;
-    //     z-index: 1;
-    //     @include g.display-large{
-    //         width: 100vw;
-    //         height: 400px;
-    //     }
-    // }
-
-    // .mainImage::before {
-    //     content: "";
-    //     position: absolute;
-    //     overflow: hidden;
-    //     left: 0;
-    //     width: 100vw;
-    //     height: 70vh;
-    //     background-image: url('../../Assets/Images/Logos&Brands/Kinesiologia.jpg');
-    //     background-size: cover;
-    //     background-position: center;
-    //     filter: grayscale(100%);
-    //     opacity: 1;
-    //     @include g.display-large{
-    //         width: 100vw;
-    //         height: 400px;
-    //     }
-    // }
-
-    // .mainText {
-    //     position: relative;
-    //     padding: 20px;
-    //     top: 0px;
-    //     z-index: 2;
-    //     @include g.create-flexbox(column, center);
-    //     color: g.$dark-black-color;
-    //     text-align: center;
-    //     .introContainer{
-    //         box-sizing: border-box;
-    //         width: 100%;
-    //         @include g.create-flexbox(column, center);
-    //         border: 1px solid grey;
-    //         padding: 2vh 4vw;
-    //         border-radius: 8px;
-    //         box-shadow: 5px 5px 10px g.$grey-color;
-    //         p{
-    //             text-align: left;
-    //             margin: 0 0 1.5vh 0;
-    //         }
-    //         @include g.display-large{
-    //             width: 80%;
-    //         }
-    //     }
-    // }
-
-    // .our{
-    //     position: relative;
-    //     width: 100%;
-    //     text-align: center;
-    //     height: 30px;
-    //     line-height: 30px;
-    //     padding-top: 5vh;
-    //     border-top: 3px solid g.$main-color;
-    // }
-
-    // .allServicesContainer{
-    //     padding: g.$mobile-main-container-padding;
-    //     .serviceContainer{
-    //         .serviceContent{
-    //             @include g.create-flexbox(column, space-between);
-    //             margin-bottom: 10vh;
-    //             p{
-    //                 margin: 0;
-    //                 width: 90vw;
-    //                 @include g.display-large{
-    //                     width: 60vw;
-    //                     margin-bottom: 1vh;
-    //                 }
-    //             }
-    //         }
-    //         .serviceImgs{
-    //             @include g.create-flexbox(row, space-evenly);
-    //             flex-wrap: wrap;
-    //             gap: 1rem;
-    //             max-width: 90vw;
-    //             margin: 3vh 0;
-    //             overflow: hidden;
-    //             @include g.display-large{
-    //                 flex-direction: row;
-    //             }
-    //             img{
-    //                 max-width: 90vw;
-    //                 max-height: 60vh;
-    //                 @include g.display-large{
-    //                     max-width: 90vw;
-    //                     max-height: 45vh;
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    // }
-    // .clientsContainer{
-    //     box-sizing: border-box;
-    //     position: relative;
-    //     max-width: 100vw;
-    //     padding: 10vh 0;
-    //     text-align: center;
-    //     justify-content: center;
-    //     .clients{
-    //         box-sizing: border-box;
-    //         position: relative;
-    //         @include g.create-flexbox(row, center);
-    //         flex-wrap: wrap;
-    //         gap: 5vw;
-    //         max-width: 100vw;
-    //         padding: 5%;
-    //     }
-    //     img{
-    //         width: 20vw;
-    //     }
-    //     p{
-    //         position: relative;
-    //         width: 80%;
-    //         margin-left: 10%;
-    //     }
-    // }
-    // .clientsContainer{
-    //     box-sizing: border-box;
-    //     position: relative;
-    //     max-width: 100vw;
-    //     padding: 10vh 0;
-    //     text-align: center;
-    //     justify-content: center;
-    //     .clients{
-    //         box-sizing: border-box;
-    //         position: relative;
-    //         @include g.create-flexbox(row, center);
-    //         flex-wrap: wrap;
-    //         gap: 5vw;
-    //         max-width: 100vw;
-    //         padding: 5%;
-    //     }
-    //     img{
-    //         width: 18vw;
-    //         @include g.display-large{
-    //             width: 12vw;
-    //         }
-    //     }
-    //     p{
-    //         position: relative;
-    //         width: 80%;
-    //         margin-left: 10%;
-    //     }
-    // }
-// }
