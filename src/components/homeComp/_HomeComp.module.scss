@@ -3,27 +3,38 @@
 .container{
     // max-width: 100%;
     width: 100vw;
-    position: relative;
+    position: absolute;
+    top: -85px;
     margin-top: g.$mobile-NavBar-height;
-    min-height: 50vh;
-    background-color: red;
+    min-height: 200vh;
+    // background-color: red;
     .sliderContainer {
         width: 100%;
         margin: auto;
         overflow: hidden;
-        background-color: blue;
+        // background-color: blue;
         .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            background-color: green;
-            .slide {
-                min-width: 100vw;
-                box-sizing: border-box;
-                .img{
-                    width: 100%;
-                }
+            position: relative; // Establece el posicionamiento relativo para el contenedor del slider
+          }
+          
+          .slide {
+            z-index: 1;
+            position: absolute; // Establece el posicionamiento absoluto para cada imagen dentro del slider
+            top: 0; // Coloca las imágenes en la parte superior del contenedor
+            left: 0; // Coloca las imágenes en la parte izquierda del contenedor
+            opacity: 0; // Oculta inicialmente todas las imágenes
+            transition: opacity 0.5s ease-in-out; // Agrega una transición suave a la opacidad
+          
+            img{
+                position: absolute;
+                top: 0;
+                height: 100vh;
             }
-        }
+            &.active {
+
+              opacity: 1; // Muestra la imagen activa
+            }
+          }
     }
 
 
