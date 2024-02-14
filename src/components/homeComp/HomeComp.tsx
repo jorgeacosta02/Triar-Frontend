@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './_HomeComp.module.scss';
 
 // Importa tus imágenes
-import img01 from '../../assets/Images/Slider/13.jpg';
+import img01 from '../../assets/Images/Slider/rugby-1210846_640.jpg';
 import img02 from '../../assets/Images/Slider/14.jpg';
 import img03 from '../../assets/Images/Slider/15.jpg';
 import img04 from '../../assets/Images/Slider/16.jpg';
@@ -62,7 +62,7 @@ const HomeComp = () => {
         <h1>Presentación</h1>
         <h1>Especialidades</h1>
         <h1>Profesionales</h1>
-        <h1>Profesionales</h1>
+        <h1>Ubicación</h1>
       </div>
     </div>
   );
