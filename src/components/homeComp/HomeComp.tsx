@@ -59,7 +59,10 @@ const HomeComp = () => {
         ))}
       </div>
       <div className={styles.div}>
-        <h1>Segundo div</h1>
+        <h1>Presentación</h1>
+        <h1>Especialidades</h1>
+        <h1>Profesionales</h1>
+        <h1>Profesionales</h1>
       </div>
     </div>
   );
