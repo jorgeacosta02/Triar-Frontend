@@ -1,10 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-// Pages imports
-// import CompanyPage from './pages/HomePage/HomePage';
-// import ServicesPage from './pages/servicesPage/servicesPage';
-// import EquipmentPage from './pages/equipmentPage/equipmentPage';
-// import JobsPage from './pages/jobsPage/jobsPage';
+// Pages
 import ContactPage from './pages/contactPage/contactPage';
 import UserRegisterPage from './pages/userRegisterPage/UserRegisterPage';
 import LoginPage from './pages/userLoginPage/UserLoginPage';
@@ -18,7 +14,7 @@ import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
 import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
 import WorkerProfilePage from './pages/workerProfilePage/WorkerProfilePage';
 
-// Components imports
+// Components
 import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserRoutesComp';
 import WorkerRoutesComp from './components/protectedRoutes/workerRoutesComp/WorkerRoutesComp';
 import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
@@ -33,12 +29,7 @@ const App = () => {
         <Route path="/appointment" element={<CalendarPage />} />
         <Route path='/user-register' element={<UserRegisterPage/>}/>
         <Route path='/user-login' element={<LoginPage/>}/>
-        {/* <Route path="/company" element={<CompanyPage />} /> */}
-        {/* <Route path="/services" element={<ServicesPage />} /> */}
-        {/* <Route path="/equipment" element={<EquipmentPage />} /> */}
-        {/* <Route path="/jobs" element={<JobsPage />} /> */}
         <Route path="/contact" element={<ContactPage />} />
-
         <Route path="/worker-login" element={<WorkerLoginPage/>}/>
         <Route path="/worker-register" element={<WorkerRegisterPage/>} />
 
@@ -58,9 +49,6 @@ const App = () => {
        <Route element={<AdminRoutesComp/>}>
         <Route path='/add-task' element={<AddTaskPage/>}/>
        </Route>
-  
-
-
       </Routes>
     </div>
   )
