@@ -2,6 +2,14 @@
 
 .container{
     padding: g.$mobile-main-container-padding;
-    @include g.create-flexbox(row, space-between);
+    @include g.create-flexbox(column, space-between);
     align-items: flex-start;
+    .calendar{
+        width: 200px;
+        ._container_dlnkc_3{
+            .rbc-calendar{
+                background-color: red;
+            }
+        }
+    }
 }

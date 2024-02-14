@@ -68,12 +68,14 @@ const CalendarComp = () => {
   return (
     <div className={styles.container}>
       <Calendar
+        className={styles.calendar}
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
         style={{
           height: 300,
-          width: '50vw',
+          width: '100%',
+          maxWidth: '300px',
         }}
         views={['month']}
         selectable={true}
@@ -89,7 +91,7 @@ const CalendarComp = () => {
         }}
         onSelectSlot={handleSelectSlot}
       />
-        <DayCalendarComp selectedDate={selectedDate} />
+      <DayCalendarComp selectedDate={selectedDate} />
     </div>
   );
 };
