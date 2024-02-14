@@ -1,4 +1,4 @@
-import WorkerProfileComp from "../../components/workerProfileComp copy/WorkerProfileComp"
+import WorkerProfileComp from "../../components/workerProfileComp/WorkerProfileComp"
 
 const WorkerProfilePage = () => {
   return (

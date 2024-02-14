@@ -28,7 +28,7 @@
         height: g.$desk-NavBar-height;
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
-        width: 40%;
+        width: 50%;
         min-width: 420px;
         right: 5%;
         line-height: g.$desk-NavBar-height;
@@ -100,7 +100,8 @@
             background-color: g.$main-dark-color;
             border-radius: 50% / 180%;
             height: 80%;
-            width: 38%;
+            width: 43%;
+            max-width: 220px;
             min-width: 150px;
             margin-left: 2vw;
         }
