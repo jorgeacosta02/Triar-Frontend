@@ -18,7 +18,7 @@
       z-index: 1;
       top: 0; // Coloca las imágenes en la parte superior del contenedor
       opacity: 0; // Oculta inicialmente todas las imágenes
-      transition: opacity 5s ease-in-out; // Agrega una transición suave a la opacidad
+      transition: opacity 1.5s ease-in-out; // Agrega una transición suave a la opacidad
       width: 100%;
       align-items: center;
       .img{

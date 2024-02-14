@@ -22,16 +22,30 @@ const UserProfileComp = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Mi perfil</h1>
-            <div className={styles.data}>
-                <p>{`Nombre: ${user.firstName.toUpperCase()}`}</p>
-                <p>{`Apellido: ${user.lastName.toUpperCase()}`}</p>
-                <p>{`Dni: ${user.dni ? user.dni : 'sin número'}`}</p>
-                <p>{`Teléfono: ${user.phone}`}</p>
-                <p>{`Email: ${user.email}`}</p>
+            <div className={styles.dataContainer}>
+                <h1 className={styles.title}>Mi perfil</h1>
+                <div className={styles.data}>
+                    <p>{`Nombre: ${user.firstName.toUpperCase()}`}</p>
+                    <p>{`Apellido: ${user.lastName.toUpperCase()}`}</p>
+                    <p>{`Dni: ${user.dni ? user.dni : 'sin número'}`}</p>
+                    <p>{`Teléfono: ${user.phone}`}</p>
+                    <p>{`Email: ${user.email}`}</p>
+                </div>
+                <div className={styles.buttons}>
+                    <button
+                        onClick={clickHandler}
+                        className={styles.button}
+                    >
+                        Cerrar sesión
+                    </button>
+                    <button
+                        onClick={goBackHandler}
+                        className={styles.button}
+                    >
+                        Volver
+                    </button>
+                </div>
             </div>
-            <button onClick={clickHandler}>Cerrar sesión</button>
-            <button onClick={goBackHandler}>Volver</button>
         </div>
     )
 }
