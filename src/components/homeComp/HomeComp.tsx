@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import styles from './_HomeComp.module.scss';
+import { useState, useEffect } from 'react';
 
 // Importa tus imágenes
 import img01 from '../../assets/Images/Slider/rugby-1210846_640.jpg';

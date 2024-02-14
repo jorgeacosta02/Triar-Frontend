@@ -1,4 +1,4 @@
-import styles from './_LogoComp.module.scss';
+import styles from './_NavBarLogoComp.module.scss';
 import TriarLogo from '../../assets/Images/Logos&Brands/logo fondo transparente.png'
 
 const LogoComp = () => {
