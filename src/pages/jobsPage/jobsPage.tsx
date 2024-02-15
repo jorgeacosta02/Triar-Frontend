@@ -1,6 +1,6 @@
-import NavBarLayout from '../../layouts/navBarLayout/navBarLayout'
+import NavBarLayout from '../../layouts/navBarLayout/NavBarLayout'
 import JobsComp from '../../components/jobsComp/jobsComp'
-import FooterComp from '../../components/footerComp/footerComp'
+import FooterComp from '../../components/footerComp/FooterComp'
 
 const JobsPage = () => {
   return (

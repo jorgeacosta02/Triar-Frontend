@@ -1,6 +1,6 @@
-import NavBarLayout from '../../layouts/navBarLayout/navBarLayout'
+import NavBarLayout from '../../layouts/navBarLayout/NavBarLayout'
 import HomeComp from '../../components/homeComp/HomeComp'
-import FooterComp from '../../components/footerComp/footerComp'
+import FooterComp from '../../components/footerComp/FooterComp'
 
 const HomePage = () => {
   return (

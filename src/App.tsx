@@ -1,14 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 
 // Pages
-import ContactPage from './pages/contactPage/contactPage';
+import ContactPage from './pages/contactPage/ContactPage';
 import UserRegisterPage from './pages/userRegisterPage/UserRegisterPage';
 import LoginPage from './pages/userLoginPage/UserLoginPage';
 import TasksPage from './pages/taskPages/TasksPage';
 import AddTaskPage from './pages/taskPages/AddTaskPage';
 import TaskByIdPage from './pages/taskPages/TaskByIdPage';
 import UserProfilePage from './pages/userProfilePage/UserProfilePage';
-import HomePage from './pages/HomePage/HomePage';
+import HomePage from './pages/homePage/HomePage';
 import CalendarPage from './pages/calendarPage/CalendarPage';
 import WorkerRegisterPage from './pages/workerRegisterPage/WorkerRegisterPage';
 import WorkerLoginPage from './pages/workerLoginPage/WorkerLoginPage';
