@@ -1,5 +1,5 @@
 import NavBarLayout from '../../layouts/navBarLayout/NavBarLayout'
-import EquipmentComp from '../../components/equipmentComp/equipmentComp'
+import EquipmentComp from '../../components/equipmentComp/EquipmentComp'
 import FooterComp from '../../components/footerComp/FooterComp'
 
 const EquipmentPage = () => {

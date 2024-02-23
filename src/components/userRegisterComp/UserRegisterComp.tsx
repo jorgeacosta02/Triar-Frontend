@@ -21,22 +21,20 @@ const UserRegisterComp
   });
 
 
-  const API = 'http://localhost:4000'
-
   const onSubmit: SubmitHandler<IUserRegisterData> = async (data) => {
     console.log(data);
     try {
-      await axios.post(`${API}/user-register`, data);
+      await axios.post(`/user-register`, data);
       console.log('Formulario enviado con éxito');
       reset();
     } catch (error) {
       console.error('Error al enviarlo', error);
         // Verificación de tipos para 'error.response'
-    if (axios.isAxiosError(error) && error.response) {
-      console.error('Detalles del error:', error.response.data);
-    } else {
-      console.error('Error desconocido:', error);
-    }
+      if (axios.isAxiosError(error) && error.response) {
+        console.error('Detalles del error:', error.response.data);
+      } else {
+        console.error('Error desconocido:', error);
+      }
     }
   };
 

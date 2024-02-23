@@ -73,7 +73,7 @@ const CalendarComp = () => {
         startAccessor="start"
         endAccessor="end"
         style={{
-          height: 300,
+          height: 500,
           width: '100%',
           maxWidth: '300px',
         }}

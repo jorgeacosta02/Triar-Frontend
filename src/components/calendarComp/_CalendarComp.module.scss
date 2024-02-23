@@ -5,11 +5,14 @@
     @include g.create-flexbox(column, space-between);
     align-items: flex-start;
     .calendar{
-        width: 200px;
+        width: 500px;
         ._container_dlnkc_3{
             .rbc-calendar{
                 background-color: red;
             }
+        }
+        .rbc-off-range-bg{
+            background-color: red !important;
         }
     }
 }
