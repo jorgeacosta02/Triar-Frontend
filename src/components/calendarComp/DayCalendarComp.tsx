@@ -117,21 +117,21 @@ const DayCalendarComp: React.FC<IDayProps> = ({selectedDate}) => {
   const timeSlots2 = calcSlotsGroup(startTime2, endTime2, definedTimeSlot2)
   
   // Determina los minutos finales del rango de trunos 
-  const endOfGroup = (timeGroup, definedTimeSlot) => {
+  // const endOfGroup = (timeGroup, definedTimeSlot) => {
 
-    const startLastSlotOfGroup = timeGroup[timeGroup.length-1]
-    const [hourString, minuteString] = startLastSlotOfGroup.split(":");
-    const endGroupMinutes = (+parseInt(hourString) * 60) + parseInt(minuteString) + definedTimeSlot;
-    console.log('hourString: ', hourString)
-    console.log('minuteString: ', minuteString)
-    console.log(endGroupMinutes)
+  //   const startLastSlotOfGroup = timeGroup[timeGroup.length-1]
+  //   const [hourString, minuteString] = startLastSlotOfGroup.split(":");
+  //   const endGroupMinutes = (+parseInt(hourString) * 60) + parseInt(minuteString) + definedTimeSlot;
+  //   console.log('hourString: ', hourString)
+  //   console.log('minuteString: ', minuteString)
+  //   console.log(endGroupMinutes)
 
-    return endGroupMinutes
-  }
+  //   return endGroupMinutes
+  // }
 
   // Se calculan los fines de grupo en minutos
-  const endOfGroup1 = endOfGroup(timeSlots1, definedTimeSlot1)
-  const endOfGroup2 = endOfGroup(timeSlots2, definedTimeSlot2)
+  // const endOfGroup1 = endOfGroup(timeSlots1, definedTimeSlot1)
+  // const endOfGroup2 = endOfGroup(timeSlots2, definedTimeSlot2)
 
   // constante para validar la renderización del segudno grupo
   let isSecondStart = false;
