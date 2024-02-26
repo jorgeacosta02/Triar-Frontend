@@ -120,7 +120,8 @@ const ContactFormComp: React.FC = () => {
               name='name' 
               placeholder='Ingresa nombre'
               value={formData.name}
-              onChange={handleInputChange}/>
+              onChange={handleInputChange}
+            />
           </div>
           <p className={styles.errMessage}>{errors.name}</p>
           <div className={styles.inputBlock}>
@@ -131,7 +132,8 @@ const ContactFormComp: React.FC = () => {
               name='email'
               placeholder='Ingresa email'
               value={formData.email}
-              onChange={handleInputChange}/>
+              onChange={handleInputChange}
+              />
           </div>
           <p className={styles.errMessage}>{errors.email}</p>
           <div className={styles.inputBlock}>
@@ -142,7 +144,8 @@ const ContactFormComp: React.FC = () => {
               name='subject'
               placeholder='Ingresa asunto'
               value={formData.subject}
-              onChange={handleInputChange}/>
+              onChange={handleInputChange}
+            />
           </div>
           <p className={styles.errMessage}>{errors.subject}</p>
           <div className={styles.textareaBlock}>

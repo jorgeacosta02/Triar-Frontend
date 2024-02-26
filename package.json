@@ -31,7 +31,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.49.3",
+    "react-hook-form": "^7.50.1",
     "react-hot-toast": "^2.4.1",
     "react-images-uploading": "^3.1.7",
     "react-jwt": "^1.2.0",
