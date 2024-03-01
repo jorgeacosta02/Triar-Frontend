@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+
 // es como si definiera un objeto de javascript
 // las propiedades son los datos que van a ir comparándose
 export const workerRegisterSchema = z.object({
