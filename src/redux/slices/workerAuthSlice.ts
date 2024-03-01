@@ -1,6 +1,6 @@
 // workerSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { loginWorker } from '../../app/actions';
+import { loginWorker } from '../actions/actions';
 import { IWorkerData, ApiResponse } from '../../Interfaces/workerInterfaces';
 
 

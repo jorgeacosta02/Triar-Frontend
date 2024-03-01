@@ -1,8 +1,8 @@
 // actions.ts
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IUserDataFromDB } from '../Interfaces/userInterfaces';
-import { IWorkerDataFromDB } from '../Interfaces/workerInterfaces';
+import { IUserDataFromDB } from '../../Interfaces/userInterfaces';
+import { IWorkerDataFromDB } from '../../Interfaces/workerInterfaces';
 
 
 export const loginUser: any = createAsyncThunk('user/loginUser', async (credentials: { dni: number; password: string }) => {
