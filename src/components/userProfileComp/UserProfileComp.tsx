@@ -2,7 +2,7 @@ import styles from './_UserProfileComp.module.scss'
 import { getDataFromLocalStorage, cleanDataInLocalStorage } from '../localStorageComp/LocalStorageComp'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { cleanUser } from '../../features/userAuth/userAuthSlice'
+import { cleanUser } from '../../redux/slices/userAuthSlice'
 
 const UserProfileComp = () => {
 

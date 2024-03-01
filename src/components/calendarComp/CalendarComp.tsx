@@ -1,7 +1,3 @@
-
-
-// Musetra en blanco sólo los días seleccionados y responde con valores sólo de los días seleccionados.
-
 import { useState } from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import format from 'date-fns/format';

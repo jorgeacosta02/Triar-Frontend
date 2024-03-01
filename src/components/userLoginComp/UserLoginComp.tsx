@@ -5,7 +5,7 @@ import { userLoginSchema } from '../../validations/zodUserSchemas';
 import { Link } from 'react-router-dom';
 import { IUserLoginData } from '../../Interfaces/userInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserAuth } from '../../features/userAuth/userAuthSlice';
+import { selectUserAuth } from '../../redux/slices/userAuthSlice';
 import { loginUser } from '../../app/actions';
 import { useNavigate } from 'react-router-dom';
 

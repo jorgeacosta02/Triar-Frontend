@@ -5,7 +5,7 @@ import { workerLoginSchema } from '../../validations/zodWorkerSchemas';
 // import { Link } from 'react-router-dom';
 import { IWorkerLoginData } from '../../Interfaces/workerInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectWorkerAuth } from '../../features/workerAuth/workerAuthSlice';
+import { selectWorkerAuth } from '../../redux/slices/workerAuthSlice';
 import { loginWorker } from '../../app/actions';
 import { useNavigate } from 'react-router-dom';
 

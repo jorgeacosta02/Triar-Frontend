@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import styles from './_navBarNavListComp.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState } from '../../redux/slices/menuSlice';
-import { falseMenu } from "../../features/menu/menuSlice";
+import { falseMenu } from '../../redux/slices/menuSlice';
 import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
-import { selectUserAuth } from "../../features/userAuth/userAuthSlice";
+import { selectUserAuth } from "../../redux/slices/userAuthSlice";
 
 
 const NavBarNavListComp = () => {

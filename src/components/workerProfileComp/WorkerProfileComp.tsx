@@ -2,7 +2,7 @@ import styles from './_WorkerProfileComp.module.scss'
 import { getDataFromLocalStorage, cleanDataInLocalStorage } from '../localStorageComp/LocalStorageComp'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { cleanWorker } from '../../features/workerAuth/workerAuthSlice';
+import { cleanWorker } from '../../redux/slices/workerAuthSlice';
 
 
 const WorkerProfileComp = () => {
