@@ -17,7 +17,7 @@ import WorkerProfilePage from './pages/workerProfilePage/WorkerProfilePage';
 // Components
 import UserRoutesComp from './components/protectedRoutes/userRoutesComp/UserRoutesComp';
 import WorkerRoutesComp from './components/protectedRoutes/workerRoutesComp/WorkerRoutesComp';
-import AdminRoutesComp from './components/protectedRoutes/AdminRoutesComp/AdminRoutesComp';
+import AdminRoutesComp from './components/protectedRoutes/adminRoutesComp/AdminRoutesComp';
 
 const App = () => {
   return (

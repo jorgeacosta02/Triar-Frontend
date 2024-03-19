@@ -5,6 +5,7 @@ import { IUserDataFromDB } from '../../Interfaces/userInterfaces';
 import { IWorkerDataFromDB } from '../../Interfaces/workerInterfaces';
 
 
+// User login
 export const loginUser: any = createAsyncThunk('user/loginUser', async (credentials: { dni: number; password: string }) => {
   try {
     const response = await axios.post<IUserDataFromDB, any>('/user-login', credentials);
@@ -17,6 +18,8 @@ export const loginUser: any = createAsyncThunk('user/loginUser', async (credenti
   }
 });
 
+
+// Worker Login
 export const loginWorker: any = createAsyncThunk('worker/loginWorker', async (credentials: { dni: number; password: string }) => {
   try {
     const response = await axios.post<IWorkerDataFromDB, any>('/worker-login', credentials);

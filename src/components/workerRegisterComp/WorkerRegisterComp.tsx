@@ -20,7 +20,6 @@ const WorkerRegisterComp
   });
 
 
-
   const onSubmit: SubmitHandler<IWorkerRegisterData> = async (data) => {
     console.log(data);
     try {

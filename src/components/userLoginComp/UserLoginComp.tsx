@@ -2,12 +2,11 @@ import styles from './_UserLoginComp.module.scss'
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { userLoginSchema } from '../../validations/zodUserSchemas';
-import { Link } from 'react-router-dom';
 import { IUserLoginData } from '../../Interfaces/userInterfaces';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuth } from '../../redux/slices/userAuthSlice';
 import { loginUser } from '../../redux/actions/actions';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const UserLoginComp = () => {

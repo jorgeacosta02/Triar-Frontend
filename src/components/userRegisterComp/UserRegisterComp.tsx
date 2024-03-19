@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 import { IUserRegisterData } from '../../Interfaces/userInterfaces';
 
 
-const UserRegisterComp
- = () => {
+const UserRegisterComp = () => {
 
   const {
     register,
