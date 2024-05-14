@@ -1,7 +1,7 @@
 // actions.ts
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IUserDataFromDB } from '../../Interfaces/userInterfaces';
+import { IUserDataFromDB } from '../../Interfaces/UserInterfaces';
 import { IWorkerDataFromDB } from '../../Interfaces/workerInterfaces';
 
 
@@ -9,7 +9,7 @@ import { IWorkerDataFromDB } from '../../Interfaces/workerInterfaces';
 export const loginUser: any = createAsyncThunk('user/loginUser', async (credentials: { dni: number; password: string }) => {
   try {
     const response = await axios.post<IUserDataFromDB, any>('/user-login', credentials);
-    console.log('response.data en loginUser: ', response.data);
+    console.log('response.data en actions-loginUser: ', response.data);
     const data = response.data;
     localStorage.setItem('accessLogin', JSON.stringify(data));
     return data;

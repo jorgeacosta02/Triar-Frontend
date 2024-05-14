@@ -1,4 +1,4 @@
-import { IUserDataFromDB } from "../../Interfaces/userInterfaces"
+import { IUserDataFromDB } from "../../Interfaces/UserInterfaces"
 import { IWorkerDataFromDB } from "../../Interfaces/workerInterfaces"
 
 export const localStorageSetUserData = (name:string, data: IUserDataFromDB | IWorkerDataFromDB) => {

@@ -6,7 +6,7 @@ const AdminRoutesComp = () => {
 
   const userFLS = getDataFromLocalStorage('accessLogin');
 
-  if (userFLS?.user?.role === 'admin' && userFLS?.user?.active) {
+  if (userFLS?.user?.role === 'user' && userFLS?.user?.active) {
     console.log('dentro del if')
     return <Outlet/>;
   }

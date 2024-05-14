@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { userRegisterSchema } from '../../validations/zodUserSchemas';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import { IUserRegisterData } from '../../Interfaces/userInterfaces';
+import { IUserRegisterData } from '../../Interfaces/UserInterfaces';
 
 
 const UserRegisterComp = () => {

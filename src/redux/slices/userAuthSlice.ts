@@ -1,11 +1,11 @@
 // userSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { loginUser } from '../actions/actions';
-import { IUserData, ApiResponse } from '../../Interfaces/userInterfaces';
+import { IUserData, ApiResponse } from '../../Interfaces/UserInterfaces';
 
 
 interface UserState {
-    data: IUserData | null;
+    data: IUserData | null | string;
     loading: boolean;
     error: string | null;
 }
